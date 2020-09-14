@@ -45,7 +45,8 @@ CREATE TABLE chip(
     CONSTRAINT PK_chip PRIMARY KEY(idNumero),
     CONSTRAINT FK_plano FOREIGN KEY(idPlano) REFERENCES plano(idPlano),
     CONSTRAINT CHK_chip_ativo CHECK (ativo = 'S' OR ativo = 'N'),
-    CONSTRAINT CHK_chip_disponivel CHECK (disponivel = 'S' OR disponivel = 'N')
+    CONSTRAINT CHK_chip_disponivel CHECK (disponivel = 'S' OR disponivel = 'N'),
+    CONSTRAINT CHK_idNumero CHECK (idNumero LIKE '^\d{2}985(1|2)\d{5}$/gm');
 );
 
 CREATE TABLE cliente_chip(
@@ -61,7 +62,6 @@ CREATE TABLE auditoria(
     idNumero CHAR(11) NOT NULL,
     dataInicio DATE NOT NULL,
     dataTermino DATE NOT NULL,
-    CONSTRAINT PK_cliente_chip PRIMARY KEY(idCliente, idNumero),
     CONSTRAINT FK_cliente_chip_idCliente FOREIGN KEY(idCliente) REFERENCES cliente(idCliente),
     CONSTRAINT FK_cliente_chip_idNumero FOREIGN KEY(idNumero) REFERENCES chip(idNumero);
 );
@@ -102,6 +102,21 @@ CREATE TABLE fatura(
     CONSTRAINT FK_fatura_chip_idNumero FOREIGN KEY(idNumero) REFERENCES chip(idNumero),
     CONSTRAINT CHK_pago CHECK (pago = 'S' or pago = 'N')
 );
+
+CREATE TABLE ligacao(
+    dataLig TIMESTAMP NOT NULL,
+    chipEmissor CHAR(11) NOT NULL,
+    ufOrigem CHAR(2) NOT NULL,
+    chipReceptor INTEGER NOT NULL,
+    ufDestino CHAR(2) NOT NULL,
+    duracao TIME NOT NULL,
+    CONSTRAINT PK_dataLig PRIMARY KEY(dataLig),
+    CONSTRAINT FK_ligacao_estado_chipEmissor FOREIGN KEY(chipEmissor) REFERENCES chip(idNumero),
+    CONSTRAINT FK_ligacao_estado_ufOrigem FOREIGN KEY(ufOrigem) REFERENCES estado(ufOrigem),
+    CONSTRAINT FK_ligacao_estado_ufDestino FOREIGN KEY(ufDestino) REFERENCES estado(ufDestino),
+);
+
+
 
 
 
