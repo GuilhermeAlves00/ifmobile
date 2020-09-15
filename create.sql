@@ -12,20 +12,20 @@ DROP TABLE IF EXISTS plano CASCADE;
 DROP TABLE IF EXISTS fatura CASCADE; 
 DROP TABLE IF EXISTS ligacao CASCADE;
 
-CREATE TABLE cobertura(
-    uf CHAR(2) NOT NULL,
-    ddd INTEGER NOT NULL,
-    CONSTRAINT PK_cobertura PRIMARY KEY(uf),
-    CONSTRAINT UNQ_cobertura UNIQUE(ddd)
-);
-
 CREATE TABLE estado(
     uf CHAR(2) NOT NULL,
     nome VARCHAR(40) NOT NULL,
     ddd INTEGER NOT NULL,
     CONSTRAINT PK_estado PRIMARY KEY(uf),
-    CONSTRAINT FK_estado_cobertura FOREIGN KEY(uf) REFERENCES cobertura(uf),
     CONSTRAINT UNQ_estado UNIQUE(ddd)
+);
+
+CREATE TABLE cobertura(
+    uf CHAR(2) NOT NULL,
+    ddd INTEGER NOT NULL,
+    CONSTRAINT PK_cobertura PRIMARY KEY(uf),
+    CONSTRAINT FK_cobertura_estado FOREIGN KEY(uf) REFERENCES estado(uf),
+    CONSTRAINT UNQ_cobertura UNIQUE(ddd)
 );
 
 CREATE TABLE cidade(
@@ -53,11 +53,7 @@ CREATE TABLE tarifa(
     idTarifa SERIAL NOT NULL,
     descricao VARCHAR(50) NOT NULL,
     valor DECIMAL NOT NULL DEFAULT 0,
-    addLigacao INTEGER NOT NULL,
-    roaming INTEGER NOT NULL,
-    CONSTRAINT PK_auditoria PRIMARY KEY(idTarifa),
-    CONSTRAINT UNQ_addLigacao UNIQUE(addLigacao),
-	CONSTRAINT UNQ_roaming UNIQUE(roaming)
+    CONSTRAINT PK_tarifa PRIMARY KEY(idTarifa)
 );
 
 CREATE TABLE plano(
@@ -69,8 +65,8 @@ CREATE TABLE plano(
     roaming INTEGER NOT NULL,
     valor DECIMAL NOT NULL,
     CONSTRAINT PK_plano PRIMARY KEY(idPlano),
-    CONSTRAINT FK_plano_tarifa_addLigacao FOREIGN KEY(addLigacao) REFERENCES tarifa(addLigacao),
-    CONSTRAINT FK_plano_tarifa_roaming FOREIGN KEY(roaming) REFERENCES tarifa(roaming)
+    CONSTRAINT FK_plano_tarifa_addLigacao FOREIGN KEY(addLigacao) REFERENCES tarifa(idTarifa),
+    CONSTRAINT FK_plano_tarifa_roaming FOREIGN KEY(roaming) REFERENCES tarifa(idTarifa)
 );
 
 CREATE TABLE chip(
@@ -98,12 +94,13 @@ CREATE TABLE auditoria(
     idNumero CHAR(11) NOT NULL,
     dataInicio DATE NOT NULL,
     dataTermino DATE NOT NULL,
+    CONSTRAINT PK_auditoria PRIMARY KEY(idCliente, idNumero, dataInicio),
     CONSTRAINT FK_cliente_chip_idCliente FOREIGN KEY(idCliente) REFERENCES cliente(idCliente),
     CONSTRAINT FK_cliente_chip_idNumero FOREIGN KEY(idNumero) REFERENCES chip(idNumero)
 );
 
 CREATE TABLE fatura(
-    referencia TIMESTAMP NOT NULL,
+    referencia DATE NOT NULL,
     idNumero CHAR(11) NOT NULL,
     valorPlano NUMERIC NOT NULL,
     totMinIn INTEGER NOT NULL,
