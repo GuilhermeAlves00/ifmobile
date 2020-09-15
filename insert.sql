@@ -5651,3 +5651,42 @@ insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Ri
 insert into cliente (nome, endereco, bairro ,idCidade, dataCadastro) values ('Bird Flawith', 'Crowley-756', 'North Shelond', 3481, '22/7/2017');
 insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Othello Frensch', 'Loftsgordon-690', 'Upper Brooglisk', 764, '7/12/2017');
 insert into cliente (nome, endereco, bairro, idCidade, dataCadastro, cancelado) values ('Aeriell Bowker', 'Bellgrove-32', 'Snedud Center', 5396, '14/6/2018', 'S');
+
+--table tarifa
+
+insert into tarifa (descricao, valor) values ('tarifa x', 0.20);
+insert into tarifa (descricao, valor) values ('tarifa x', 0.20);
+insert into tarifa (descricao, valor) values ('tarifa x', 0.20);
+insert into tarifa (descricao, valor) values ('tarifa x', 0.20);
+insert into tarifa (descricao, valor) values ('tarifa x', 0.20);
+insert into tarifa (descricao, valor) values ('tarifa y', 0.40);
+insert into tarifa (descricao, valor) values ('tarifa y', 0.40);
+insert into tarifa (descricao, valor) values ('tarifa y', 0.40);
+insert into tarifa (descricao, valor) values ('tarifa y', 0.40);
+insert into tarifa (descricao, valor) values ('tarifa y', 0.40);
+
+--table plano
+
+insert into plano (descricao, addLigacao, roaming, valor) values('plano x', 0.99, 1.99, 39.99);
+insert into plano (descricao, addLigacao, roaming, valor) values('plano x', 0.99, 1.99, 39.99);
+insert into plano (descricao, addLigacao, roaming, valor) values('plano x', 0.99, 1.99, 39.99);
+insert into plano (descricao, addLigacao, roaming, valor) values('plano x', 0.99, 1.99, 39.99);
+insert into plano (descricao, addLigacao, roaming, valor) values('plano x', 0.99, 1.99, 39.99);
+insert into plano (descricao, addLigacao, roaming, valor) values('plano y', 1.99, 2.99, 49.99);
+insert into plano (descricao, addLigacao, roaming, valor) values('plano y', 1.99, 2.99, 49.99);
+insert into plano (descricao, addLigacao, roaming, valor) values('plano y', 1.99, 2.99, 49.99);
+insert into plano (descricao, addLigacao, roaming, valor) values('plano y', 1.99, 2.99, 49.99);
+insert into plano (descricao, addLigacao, roaming, valor) values('plano y', 1.99, 2.99, 49.99);
+
+--table chip
+
+insert into chip (idNumero, idPlano, disponivel) values ('83985264220', 1, 'N');
+insert into chip (idNumero, idPlano, ativo) values ('83985166894', 2, 'N');
+insert into chip (idNumero, idPlano, disponivel) values ('81985227078', 3, 'N');
+insert into chip (idNumero, idPlano, disponivel) values ('81985133616', 4, 'N');
+insert into chip (idNumero, idPlano, disponivel) values ('81985278243', 5, 'N');
+insert into chip (idNumero, idPlano, disponivel) values ('86985188070', 6, 'N');
+insert into chip (idNumero, idPlano, ativo) values ('86985132407', 7, 'N');
+insert into chip (idNumero, idPlano, ativo) values ('86985178495', 8, 'N');
+insert into chip (idNumero, idPlano, disponivel) values ('84985287835', 9, 'N');
+insert into chip (idNumero, idPlano, ativo) values ('84985166779', 10, 'N');

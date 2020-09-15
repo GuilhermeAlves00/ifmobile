@@ -71,14 +71,14 @@ CREATE TABLE plano(
 
 CREATE TABLE chip(
     idNumero CHAR(11) NOT NULL,
+    idPlano INTEGER NOT NULL,
     ativo CHAR(1) NOT NULL DEFAULT 'S',
     disponivel CHAR(1) NOT NULL DEFAULT 'S',
-    idPlano INTEGER NOT NULL,
     CONSTRAINT PK_chip PRIMARY KEY(idNumero),
     CONSTRAINT FK_plano FOREIGN KEY(idPlano) REFERENCES plano(idPlano),
     CONSTRAINT CHK_chip_ativo CHECK (ativo = 'S' OR ativo = 'N'),
     CONSTRAINT CHK_chip_disponivel CHECK (disponivel = 'S' OR disponivel = 'N'),
-    CONSTRAINT CHK_idNumero CHECK (idNumero LIKE '^\d{2}985(1|2)\d{5}$/gm')
+    CONSTRAINT CHK_idNumero CHECK (idNumero <> '###985[1-2]#####' OR idNumero <> '[!##985[1-2]#0000]')
 );
 
 CREATE TABLE cliente_chip(
