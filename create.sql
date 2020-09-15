@@ -1,5 +1,17 @@
 CREATE DATABASE ifmobile;
 
+DROP TABLE IF EXISTS cobertura CASCADE;
+DROP TABLE IF EXISTS estado CASCADE;
+DROP TABLE IF EXISTS cidade CASCADE;
+DROP TABLE IF EXISTS cliente CASCADE;
+DROP TABLE IF EXISTS chip CASCADE;
+DROP TABLE IF EXISTS cliente_chip CASCADE;
+DROP TABLE IF EXISTS auditoria CASCADE;
+DROP TABLE IF EXISTS tarifa CASCADE;
+DROP TABLE IF EXISTS plano CASCADE;
+DROP TABLE IF EXISTS fatura CASCADE; 
+DROP TABLE IF EXISTS ligacao CASCADE;
+
 CREATE TABLE cobertura(
     uf CHAR(2) NOT NULL,
     ddd INTEGER NOT NULL,
@@ -37,35 +49,6 @@ CREATE TABLE cliente(
     CONSTRAINT CHK_cliente_cancelado CHECK (cancelado = 'S' OR cancelado = 'N')
 );
 
-CREATE TABLE chip(
-    idNumero CHAR(11) NOT NULL,
-    ativo CHAR(1) NOT NULL DEFAULT 'S',
-    disponivel CHAR(1) NOT NULL DEFAULT 'S',
-    idPlano INTEGER NOT NULL,
-    CONSTRAINT PK_chip PRIMARY KEY(idNumero),
-    CONSTRAINT FK_plano FOREIGN KEY(idPlano) REFERENCES plano(idPlano),
-    CONSTRAINT CHK_chip_ativo CHECK (ativo = 'S' OR ativo = 'N'),
-    CONSTRAINT CHK_chip_disponivel CHECK (disponivel = 'S' OR disponivel = 'N'),
-    CONSTRAINT CHK_idNumero CHECK (idNumero LIKE '^\d{2}985(1|2)\d{5}$/gm');
-);
-
-CREATE TABLE cliente_chip(
-    idCliente INTEGER NOT NULL,
-    idNumero CHAR(11) NOT NULL,
-    CONSTRAINT PK_cliente_chip PRIMARY KEY(idCliente, idNumero),
-    CONSTRAINT FK_cliente_chip_idCliente FOREIGN KEY(idCliente) REFERENCES cliente(idCliente),
-    CONSTRAINT FK_cliente_chip_idNumero FOREIGN KEY(idNumero) REFERENCES chip(idNumero);
-);
-
-CREATE TABLE auditoria(
-    idCliente INTEGER NOT NULL,
-    idNumero CHAR(11) NOT NULL,
-    dataInicio DATE NOT NULL,
-    dataTermino DATE NOT NULL,
-    CONSTRAINT FK_cliente_chip_idCliente FOREIGN KEY(idCliente) REFERENCES cliente(idCliente),
-    CONSTRAINT FK_cliente_chip_idNumero FOREIGN KEY(idNumero) REFERENCES chip(idNumero);
-);
-
 CREATE TABLE tarifa(
     idTarifa SERIAL NOT NULL,
     descricao VARCHAR(50) NOT NULL,
@@ -73,6 +56,8 @@ CREATE TABLE tarifa(
     addLigacao INTEGER NOT NULL,
     roaming INTEGER NOT NULL,
     CONSTRAINT PK_auditoria PRIMARY KEY(idTarifa),
+    CONSTRAINT UNQ_addLigacao UNIQUE(addLigacao),
+	CONSTRAINT UNQ_roaming UNIQUE(roaming)
 );
 
 CREATE TABLE plano(
@@ -88,8 +73,37 @@ CREATE TABLE plano(
     CONSTRAINT FK_plano_tarifa_roaming FOREIGN KEY(roaming) REFERENCES tarifa(roaming)
 );
 
+CREATE TABLE chip(
+    idNumero CHAR(11) NOT NULL,
+    ativo CHAR(1) NOT NULL DEFAULT 'S',
+    disponivel CHAR(1) NOT NULL DEFAULT 'S',
+    idPlano INTEGER NOT NULL,
+    CONSTRAINT PK_chip PRIMARY KEY(idNumero),
+    CONSTRAINT FK_plano FOREIGN KEY(idPlano) REFERENCES plano(idPlano),
+    CONSTRAINT CHK_chip_ativo CHECK (ativo = 'S' OR ativo = 'N'),
+    CONSTRAINT CHK_chip_disponivel CHECK (disponivel = 'S' OR disponivel = 'N'),
+    CONSTRAINT CHK_idNumero CHECK (idNumero LIKE '^\d{2}985(1|2)\d{5}$/gm')
+);
+
+CREATE TABLE cliente_chip(
+    idCliente INTEGER NOT NULL,
+    idNumero CHAR(11) NOT NULL,
+    CONSTRAINT PK_cliente_chip PRIMARY KEY(idCliente, idNumero),
+    CONSTRAINT FK_cliente_chip_idCliente FOREIGN KEY(idCliente) REFERENCES cliente(idCliente),
+    CONSTRAINT FK_cliente_chip_idNumero FOREIGN KEY(idNumero) REFERENCES chip(idNumero)
+);
+
+CREATE TABLE auditoria(
+    idCliente INTEGER NOT NULL,
+    idNumero CHAR(11) NOT NULL,
+    dataInicio DATE NOT NULL,
+    dataTermino DATE NOT NULL,
+    CONSTRAINT FK_cliente_chip_idCliente FOREIGN KEY(idCliente) REFERENCES cliente(idCliente),
+    CONSTRAINT FK_cliente_chip_idNumero FOREIGN KEY(idNumero) REFERENCES chip(idNumero)
+);
+
 CREATE TABLE fatura(
-    referencia DATETIME NOT NULL,
+    referencia TIMESTAMP NOT NULL,
     idNumero CHAR(11) NOT NULL,
     valorPlano NUMERIC NOT NULL,
     totMinIn INTEGER NOT NULL,
@@ -112,8 +126,8 @@ CREATE TABLE ligacao(
     duracao TIME NOT NULL,
     CONSTRAINT PK_dataLig PRIMARY KEY(dataLig),
     CONSTRAINT FK_ligacao_estado_chipEmissor FOREIGN KEY(chipEmissor) REFERENCES chip(idNumero),
-    CONSTRAINT FK_ligacao_estado_ufOrigem FOREIGN KEY(ufOrigem) REFERENCES estado(ufOrigem),
-    CONSTRAINT FK_ligacao_estado_ufDestino FOREIGN KEY(ufDestino) REFERENCES estado(ufDestino),
+    CONSTRAINT FK_ligacao_estado_ufOrigem FOREIGN KEY(ufOrigem) REFERENCES estado(uf),
+    CONSTRAINT FK_ligacao_estado_ufDestino FOREIGN KEY(ufDestino) REFERENCES estado(uf)
 );
 
 
