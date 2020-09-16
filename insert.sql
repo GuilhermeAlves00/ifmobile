@@ -2760,7 +2760,6 @@ INSERT INTO cidade (nome, uf) VALUES ('Carmo do Rio Verde', 'GO');
 INSERT INTO cidade (nome, uf) VALUES ('Castelândia', 'GO');
 INSERT INTO cidade (nome, uf) VALUES ('Catalão', 'GO');
 INSERT INTO cidade (nome, uf) VALUES ('Caturaí', 'GO');
-INSERT INTO cidade (nome, uf) VALUES ('Cavalcante', 'GO');
 
 --table cliente
 
@@ -2873,33 +2872,34 @@ insert into fatura (referencia, idNumero, valorPlano, totMinIn, totMinOut, txMin
 
 --table ligacao
 
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-07-22 17:58:53', '83985264220', 'PB', '79996698997', 'SE', '0:47:59');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-03-12 21:14:52', '83985166894', 'PB', '22936388177', 'RJ', '0:33:33');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-03 15:47:36', '81985227078', 'PE', '54926921219', 'RS', '1:38:39');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-07-04 18:24:06', '81985133616', 'PE', '12923554170', 'SP', '0:40:15');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-09-23 15:53:09', '81985278243', 'PE', '75925162564', 'BA', '0:28:29');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-03-05 05:27:30', '86985188070', 'PI', '48964249534', 'SC', '1:28:31');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-02-10 20:57:27', '86985132407', 'PI', '84971728580', 'PE', '0:01:23');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-24 11:31:38', '86985178495', 'PI', '46982135848', 'PR', '0:06:00');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-05-04 19:15:46', '84985287835', 'RN', '19958819796', 'SP', '1:45:53');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-12-21 19:08:50', '84985166779', 'RN', '24953954535', 'RJ', '0:55:28');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-06-17 01:17:16', '8498510000', 'RN', '91969157240', 'PA', '0:01:18');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-01-21 20:48:03', '81985133616', 'PE', '74937850660', 'BA', '0:03:07');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-09-07 07:58:12', '86985188070', 'PI', '69972532469', 'RO', '0:27:33');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-07-16 15:34:08', '81985227078', 'PE', '85902973685', 'CE', '1:08:12');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-12-29 20:26:18', '86985188070', 'PI', '11944479200', 'SP', '0:20:30');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-15 12:13:13', '84985166779', 'RN', '87961226223', 'PE', '1:36:30');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-05-13 00:14:30', '81985227078', 'PE', '63927834189', 'TO', '1:32:58');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-08-14 04:26:53', '86985132407', 'PI', '83970576208', 'PB', '0:21:23');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-03-09 13:15:18', '81985227078', 'PE', '85922602029', 'CE', '1:52:14');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-05-28 01:27:48', '84985166779', 'RN', '53909615771', 'RS', '0:39:04');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-08-04 06:45:03', '86985132407', 'PI', '16923372672', 'SP', '0:32:20');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-12-05 10:01:09', '86985132407', 'PI', '41972612901', 'PR', '0:00:58');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-25 13:45:33', '81985227078', 'PE', '83925720593', 'PB', '0:06:01');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-10-29 14:07:45', '83985166894', 'PB', '71929765212', 'BA', '0:30:42');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-02-10 19:44:24', '86985132407', 'PI', '42960576922', 'PR', '1:36:19');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-09-17 21:09:15', '81985227078', 'PE', '42908324362', 'PR', '1:22:55');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-08-11 22:34:58', '84985166779', 'RN', '62989110654', 'GO', '0:30:51');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-01-24 08:33:18', '83985166894', 'PB', '21974233907', 'RJ', '1:33:14');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-21 14:36:52', '84985166779', 'RN', '11989562082', 'SP', '1:52:14');
---insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-12-02 12:14:30', '83985166894', 'PB', '79904820226', 'SE', '0:19:51');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-07-22 17:58:53', '83985264220', 'PB', '79996698997', 'SE', '0:47:59');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-03-12 21:14:52', '83985166894', 'PB', '21936388177', 'RJ', '0:33:33');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-03 15:47:36', '81985227078', 'PE', '51926921219', 'RS', '1:38:39');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-07-04 18:24:06', '81985133616', 'PE', '11923554170', 'SP', '0:40:15');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-09-23 15:53:09', '81985278243', 'PE', '71925162564', 'BA', '0:28:29');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-03-05 05:27:30', '86985188070', 'PI', '47964249534', 'SC', '1:28:31');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-02-10 20:57:27', '86985132407', 'PI', '81971728580', 'PE', '0:01:23');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-24 11:31:38', '86985178495', 'PI', '41982135848', 'PR', '0:06:00');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-05-04 19:15:46', '84985287835', 'RN', '11958819796', 'SP', '1:45:53');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-12-21 19:08:50', '84985166779', 'RN', '21953954535', 'RJ', '0:55:28');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-01-21 20:48:03', '81985133616', 'PE', '71937850660', 'BA', '0:03:07');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-09-07 07:58:12', '86985188070', 'PI', '69972532469', 'RO', '0:27:33');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-07-16 15:34:08', '81985227078', 'PE', '85902973685', 'CE', '1:08:12');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-12-29 20:26:18', '86985188070', 'PI', '11944479200', 'SP', '0:20:30');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-15 12:13:13', '84985166779', 'RN', '81961226223', 'PE', '1:36:30');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-05-13 00:14:30', '81985227078', 'PE', '63927834189', 'TO', '1:32:58');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-08-14 04:26:53', '86985132407', 'PI', '83970576208', 'PB', '0:21:23');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-03-09 13:15:18', '81985227078', 'PE', '85922602029', 'CE', '1:52:14');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-05-28 01:27:48', '84985166779', 'RN', '51909615771', 'RS', '0:39:04');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-08-04 06:45:03', '86985132407', 'PI', '11923372672', 'SP', '0:32:20');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-12-05 10:01:09', '86985132407', 'PI', '41972612901', 'PR', '0:00:58');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-25 13:45:33', '81985227078', 'PE', '83925720593', 'PB', '0:06:01');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-10-29 14:07:45', '83985166894', 'PB', '71929765212', 'BA', '0:30:42');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-02-10 19:44:24', '86985132407', 'PI', '41960576922', 'PR', '1:36:19');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-09-17 21:09:15', '81985227078', 'PE', '41908324362', 'PR', '1:22:55');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-08-11 22:34:58', '84985166779', 'RN', '62989110654', 'GO', '0:30:51');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-01-24 08:33:18', '83985166894', 'PB', '21974233907', 'RJ', '1:33:14');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-21 14:36:52', '84985166779', 'RN', '11989562082', 'SP', '1:52:14');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-12-02 12:14:30', '83985166894', 'PB', '79904820226', 'SE', '0:19:51');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2017-06-30 13:45:29', '83985264220', 'PB', '79996698997', 'SE', '0:50:16');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2018-08-14 05:30:54', '83985264220', 'PB', '79996698997', 'SE', '0:14:35');
