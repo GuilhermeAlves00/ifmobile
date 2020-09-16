@@ -2761,44 +2761,38 @@ INSERT INTO cidade (nome, uf) VALUES ('Castelândia', 'GO');
 INSERT INTO cidade (nome, uf) VALUES ('Catalão', 'GO');
 INSERT INTO cidade (nome, uf) VALUES ('Caturaí', 'GO');
 INSERT INTO cidade (nome, uf) VALUES ('Cavalcante', 'GO');
-INSERT INTO cidade (nome, uf) VALUES ('Ceres', 'GO');
-INSERT INTO cidade (nome, uf) VALUES ('Cezarina', 'GO');
-INSERT INTO cidade (nome, uf) VALUES ('Chapadão do Céu', 'GO');
-INSERT INTO cidade (nome, uf) VALUES ('Cidade Ocidental', 'GO');
-INSERT INTO cidade (nome, uf) VALUES ('Cocalzinho de Goiás', 'GO');
-INSERT INTO cidade (nome, uf) VALUES ('Colinas do Sul', 'GO');
-I
+
 --table cliente
 
 insert into cliente (nome, endereco, bairro, idCidade, dataCadastro, cancelado) values ('Mindy Bramich', 'Kipling-873', 'Lower North Ploalp', 328, '5/11/2019', 'S');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Lu Harragin', 'Packers-169', 'Yuc Hills', 4703, '26/3/2019');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Lu Harragin', 'Packers-169', 'Yuc Hills', 1258, '26/3/2019');
 insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Fanchette Korneichik', 'Corscot-637', 'Midtown Nercard', 490, '17/5/2017');
 insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Price Habbergham', 'Melby-452', 'Upper North Shruxind', 1599, '9/12/2019');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Julianna Kruse', 'Stephen-595', 'Shoonel Acre', 3078, '16/3/2019');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Julianna Kruse', 'Stephen-595', 'Shoonel Acre', 1673, '16/3/2019');
 insert into cliente (nome, endereco, bairro, idCidade, dataCadastro, cancelado) values ('Pierce Durrett', 'Stang-56', 'Upper South Splohed', 646, '9/12/2019', 'S');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Mohandas Willard', 'Cordelia-164', 'Upper West Ziffis', 3441, '17/9/2017');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Eada Blockwell', 'Cascade-852', 'Upper North Skoppeed', 5377, '27/7/2020');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Kaela Jandourek', '8th-246', 'Schossirwep Garden', 4786, '22/11/2017');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Mohandas Willard', 'Cordelia-164', 'Upper West Ziffis', 723, '17/9/2017');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Eada Blockwell', 'Cascade-852', 'Upper North Skoppeed', 853, '27/7/2020');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Kaela Jandourek', '8th-246', 'Schossirwep Garden', 2418, '22/11/2017');
 insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Debbie MacKill', 'Basil-715', 'Smeggutoc Row', 1809, '28/1/2020');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Wittie Marmion', 'Northland-134', 'Lower Schiamp', 4699, '23/5/2017');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Blakelee Machin', 'Michigan-533', 'Sphark District', 4055, '19/2/2019');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Wittie Marmion', 'Northland-134', 'Lower Schiamp', 1563, '23/5/2017');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Blakelee Machin', 'Michigan-533', 'Sphark District', 152, '19/2/2019');
 insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Cori Digle', 'John Wall-533', 'Shrunlask Town', 288, '23/1/2019');
 insert into cliente (nome, endereco, bairro, idCidade, dataCadastro, cancelado) values ('Jillayne Rupke', 'Haas-86',  'Farliat Row',2327, '7/2/2019', 'S');
 insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Gerhardine Kull', 'Loomis-317', 'Huffas Cross', 1282, '25/7/2016');
 insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Jobie Casotti', 'Iowa-409', 'West Nefub', 2580, '30/7/2019');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Ivett Elmore', 'Miller-465', 'Spleappeet Town', 3677, '16/3/2017');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro, cancelado) values ('Haily Hallede', 'Maple-899', 'Upper East Chugent', 5004, '3/1/2019', 'S');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Ivett Elmore', 'Miller-465', 'Spleappeet Town', 1251, '16/3/2017');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro, cancelado) values ('Haily Hallede', 'Maple-899', 'Upper East Chugent', 431, '3/1/2019', 'S');
 insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Phoebe Heare', 'Lukken-695', 'Skafanluct Place', 367, '30/5/2018');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Orelia Blitz', 'Sundown-390', 'Hafumost Cross', 3065, '19/12/2018');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Christiano Gretton', 'Homewood-525', 'South Wrem', 5082, '8/4/2019');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Orelia Blitz', 'Sundown-390', 'Hafumost Cross', 1031, '19/12/2018');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Christiano Gretton', 'Homewood-525', 'South Wrem', 2599, '8/4/2019');
 insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Ilene Verny', 'Grim-586', 'Nob Garden', 2509, '21/8/2016');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Bengt Yanshonok', 'Summit-169', 'Smelguld Road', 5006, '16/12/2017');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro, cancelado) values ('Mellisent Semken', 'Sachtjen-656', 'Lower West Whitlon', 2994, '26/7/2016', 'S');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Bengt Yanshonok', 'Summit-169', 'Smelguld Road', 1526, '16/12/2017');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro, cancelado) values ('Mellisent Semken', 'Sachtjen-656', 'Lower West Whitlon', 2294, '26/7/2016', 'S');
 insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Mallissa Feldfisher', 'Dapin-598', 'Hast Bazaar', 169, '5/8/2020');
 insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Rick Shields', 'Main-25', 'Loork Center', 2507, '14/7/2016');
-insert into cliente (nome, endereco, bairro ,idCidade, dataCadastro) values ('Bird Flawith', 'Crowley-756', 'North Shelond', 3481, '22/7/2017');
+insert into cliente (nome, endereco, bairro ,idCidade, dataCadastro) values ('Bird Flawith', 'Crowley-756', 'North Shelond', 1299, '22/7/2017');
 insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Othello Frensch', 'Loftsgordon-690', 'Upper Brooglisk', 764, '7/12/2017');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro, cancelado) values ('Aeriell Bowker', 'Bellgrove-32', 'Snedud Center', 5396, '14/6/2018', 'S');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro, cancelado) values ('Aeriell Bowker', 'Bellgrove-32', 'Snedud Center', 829, '14/6/2018', 'S');
 
 --table tarifa
 
@@ -2839,4 +2833,73 @@ insert into chip (idNumero, idPlano, ativo) values ('86985132407', 7, 'N');
 insert into chip (idNumero, idPlano, ativo) values ('86985178495', 8, 'N');
 insert into chip (idNumero, idPlano, disponivel) values ('84985287835', 9, 'N');
 insert into chip (idNumero, idPlano, ativo) values ('84985166779', 10, 'N');
-insert into chip (idNumero, idPlano, ativo) values ('8498510000', 11, 'N');         
+insert into chip (idNumero, idPlano, ativo) values ('8498510777', 11, 'N');         
+
+--table cliente_chip
+
+insert into cliente_chip (idNumero, idCliente) values ('83985264220', 11);
+insert into cliente_chip (idNumero, idCliente) values ('83985166894', 13);
+insert into cliente_chip (idNumero, idCliente) values ('81985227078', 22);
+insert into cliente_chip (idNumero, idCliente) values ('81985133616', 9);
+insert into cliente_chip (idNumero, idCliente) values ('81985278243', 17);
+insert into cliente_chip (idNumero, idCliente) values ('86985188070', 18);
+insert into cliente_chip (idNumero, idCliente) values ('86985132407', 25);
+insert into cliente_chip (idNumero, idCliente) values ('86985178495', 28);
+insert into cliente_chip (idNumero, idCliente) values ('84985287835', 2);
+insert into cliente_chip (idNumero, idCliente) values ('84985166779', 8);
+
+
+--table auditoria
+
+insert into auditoria (idNumero, idCliente, dataInicio, dataTermino) values ('83985264220', 11, '22/09/2019', '10/11/2019');
+insert into auditoria (idNumero, idCliente, dataInicio, dataTermino) values ('83985166894', 13, '10/03/2019', '31/10/2019');
+insert into auditoria (idNumero, idCliente, dataInicio, dataTermino) values ('81985227078', 22, '10/06/2019', '16/11/2019');
+insert into auditoria (idNumero, idCliente, dataInicio, dataTermino) values ('81985133616', 9, '23/09/2019', '18/12/2019');
+insert into auditoria (idNumero, idCliente, dataInicio, dataTermino) values ('81985278243', 17, '27/09/2019', '29/11/2019');
+
+--table fatura
+
+insert into fatura (referencia, idNumero, valorPlano, totMinIn, totMinOut, txMinExced, txRoaming, total) values ('30/09/2019', '83985264220', 39.99, 21, 20, null, null, null);
+insert into fatura (referencia, idNumero, valorPlano, totMinIn, totMinOut, txMinExced, txRoaming, total) values ('10/06/2020', '83985166894', 39.99, 29, 50, null, null, null);
+insert into fatura (referencia, idNumero, valorPlano, totMinIn, totMinOut, txMinExced, txRoaming, total) values ('04/12/2019', '81985227078', 39.99, 20, 38, null, null, null);
+insert into fatura (referencia, idNumero, valorPlano, totMinIn, totMinOut, txMinExced, txRoaming, total) values ('10/07/2020', '81985133616', 39.99, 36, 40, null, null, null);
+insert into fatura (referencia, idNumero, valorPlano, totMinIn, totMinOut, txMinExced, txRoaming, total) values ('11/11/2019', '81985278243', 39.99, 18, 10, null, null, null);
+insert into fatura (referencia, idNumero, valorPlano, totMinIn, totMinOut, txMinExced, txRoaming, total) values ('02/11/2019', '86985188070', 49.99, 36, 5, null, null, null);
+insert into fatura (referencia, idNumero, valorPlano, totMinIn, totMinOut, txMinExced, txRoaming, total) values ('19/06/2020', '86985132407', 49.99, 7, 51, null, null, null);
+insert into fatura (referencia, idNumero, valorPlano, totMinIn, totMinOut, txMinExced, txRoaming, total) values ('07/02/2020', '86985178495', 49.99, 29, 38, null, null, null);
+insert into fatura (referencia, idNumero, valorPlano, totMinIn, totMinOut, txMinExced, txRoaming, total) values ('21/09/2019', '84985287835', 49.99, 41, 42, null, null, null);
+insert into fatura (referencia, idNumero, valorPlano, totMinIn, totMinOut, txMinExced, txRoaming, total) values ('27/05/2020', '84985166779', 49.99, 15, 24, null, null, null);
+insert into fatura (referencia, idNumero, valorPlano, totMinIn, totMinOut, txMinExced, txRoaming, total) values ('30/08/2020', '8498510777', 39.99, 56, 47, null, null, null);
+
+--table ligacao
+
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-07-22 17:58:53', '83985264220', 'PB', '79996698997', 'SE', '0:47:59');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-03-12 21:14:52', '83985166894', 'PB', '22936388177', 'RJ', '0:33:33');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-03 15:47:36', '81985227078', 'PE', '54926921219', 'RS', '1:38:39');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-07-04 18:24:06', '81985133616', 'PE', '12923554170', 'SP', '0:40:15');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-09-23 15:53:09', '81985278243', 'PE', '75925162564', 'BA', '0:28:29');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-03-05 05:27:30', '86985188070', 'PI', '48964249534', 'SC', '1:28:31');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-02-10 20:57:27', '86985132407', 'PI', '84971728580', 'PE', '0:01:23');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-24 11:31:38', '86985178495', 'PI', '46982135848', 'PR', '0:06:00');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-05-04 19:15:46', '84985287835', 'RN', '19958819796', 'SP', '1:45:53');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-12-21 19:08:50', '84985166779', 'RN', '24953954535', 'RJ', '0:55:28');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-06-17 01:17:16', '8498510000', 'RN', '91969157240', 'PA', '0:01:18');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-01-21 20:48:03', '81985133616', 'PE', '74937850660', 'BA', '0:03:07');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-09-07 07:58:12', '86985188070', 'PI', '69972532469', 'RO', '0:27:33');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-07-16 15:34:08', '81985227078', 'PE', '85902973685', 'CE', '1:08:12');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-12-29 20:26:18', '86985188070', 'PI', '11944479200', 'SP', '0:20:30');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-15 12:13:13', '84985166779', 'RN', '87961226223', 'PE', '1:36:30');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-05-13 00:14:30', '81985227078', 'PE', '63927834189', 'TO', '1:32:58');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-08-14 04:26:53', '86985132407', 'PI', '83970576208', 'PB', '0:21:23');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-03-09 13:15:18', '81985227078', 'PE', '85922602029', 'CE', '1:52:14');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-05-28 01:27:48', '84985166779', 'RN', '53909615771', 'RS', '0:39:04');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-08-04 06:45:03', '86985132407', 'PI', '16923372672', 'SP', '0:32:20');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-12-05 10:01:09', '86985132407', 'PI', '41972612901', 'PR', '0:00:58');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-25 13:45:33', '81985227078', 'PE', '83925720593', 'PB', '0:06:01');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-10-29 14:07:45', '83985166894', 'PB', '71929765212', 'BA', '0:30:42');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-02-10 19:44:24', '86985132407', 'PI', '42960576922', 'PR', '1:36:19');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-09-17 21:09:15', '81985227078', 'PE', '42908324362', 'PR', '1:22:55');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-08-11 22:34:58', '84985166779', 'RN', '62989110654', 'GO', '0:30:51');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-01-24 08:33:18', '83985166894', 'PB', '21974233907', 'RJ', '1:33:14');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-21 14:36:52', '84985166779', 'RN', '11989562082', 'SP', '1:52:14');
+--insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-12-02 12:14:30', '83985166894', 'PB', '79904820226', 'SE', '0:19:51');

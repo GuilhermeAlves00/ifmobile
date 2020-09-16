@@ -77,13 +77,13 @@ CREATE TABLE chip(
     CONSTRAINT PK_chip PRIMARY KEY(idNumero),
     CONSTRAINT FK_plano FOREIGN KEY(idPlano) REFERENCES plano(idPlano),
     CONSTRAINT CHK_chip_ativo CHECK (ativo = 'S' OR ativo = 'N'),
-    CONSTRAINT CHK_chip_disponivel CHECK (disponivel = 'S' OR disponivel = 'N'),
-    CONSTRAINT CHK_idNumero CHECK (idNumero <> '###985[1-2]#####' OR idNumero <> '[!##985[1-2]#0000]')
+    CONSTRAINT CHK_chip_disponivel CHECK (disponivel = 'S' OR disponivel = 'N')
+    --CONSTRAINT CHK_idNumero CHECK (idNumero LIKE '###985[1-2]#####')
 );
 
 CREATE TABLE cliente_chip(
-    idCliente INTEGER NOT NULL,
     idNumero CHAR(11) NOT NULL,
+    idCliente INTEGER NOT NULL,
     CONSTRAINT PK_cliente_chip PRIMARY KEY(idCliente, idNumero),
     CONSTRAINT FK_cliente_chip_idCliente FOREIGN KEY(idCliente) REFERENCES cliente(idCliente),
     CONSTRAINT FK_cliente_chip_idNumero FOREIGN KEY(idNumero) REFERENCES chip(idNumero)
@@ -105,9 +105,9 @@ CREATE TABLE fatura(
     valorPlano NUMERIC NOT NULL,
     totMinIn INTEGER NOT NULL,
     totMinOut INTEGER NOT NULL,
-    txMinExced NUMERIC NOT NULL,
-    txRoaming NUMERIC NOT NULL,
-    total NUMERIC NOT NULL,
+    txMinExced NUMERIC,
+    txRoaming NUMERIC,
+    total NUMERIC,
     pago CHAR(1) NOT NULL DEFAULT 'N',
     CONSTRAINT PK_referencia PRIMARY KEY(referencia),
     CONSTRAINT FK_fatura_chip_idNumero FOREIGN KEY(idNumero) REFERENCES chip(idNumero),
@@ -118,7 +118,7 @@ CREATE TABLE ligacao(
     dataLig TIMESTAMP NOT NULL,
     chipEmissor CHAR(11) NOT NULL,
     ufOrigem CHAR(2) NOT NULL,
-    chipReceptor INTEGER NOT NULL,
+    chipReceptor CHAR(11) NOT NULL,
     ufDestino CHAR(2) NOT NULL,
     duracao TIME NOT NULL,
     CONSTRAINT PK_dataLig PRIMARY KEY(dataLig),
