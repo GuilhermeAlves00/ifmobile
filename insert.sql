@@ -2903,3 +2903,7 @@ insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, du
 insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-12-02 12:14:30', '83985166894', 'PB', '79904820226', 'SE', '0:19:51');
 insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2017-06-30 13:45:29', '83985264220', 'PB', '79996698997', 'SE', '0:50:16');
 insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2018-08-14 05:30:54', '83985264220', 'PB', '79996698997', 'SE', '0:14:35');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-09 05:30:54', '83985264220', 'PB', '79996698997', 'SE', '0:14:35');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-07 05:30:54', '83985264220', 'PB', '79996698997', 'SE', '0:09:14');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-05 05:30:54', '83985264220', 'PB', '79996698997', 'SE', '0:03:10');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-09-30 05:30:54', '83985264220', 'PB', '79996698997', 'SE', '0:24:47');
