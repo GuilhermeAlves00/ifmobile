@@ -2875,6 +2875,7 @@ insert into fatura (referencia, idNumero, valorPlano, totMinIn, totMinOut, txMin
 insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-07-22 17:58:53', '83985264220', 'PB', '79996698997', 'SE', '0:47:59');
 insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-03-12 21:14:52', '83985166894', 'PB', '21936388177', 'RJ', '0:33:33');
 insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-03 15:47:36', '81985227078', 'PE', '51926921219', 'RS', '1:38:39');
+insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-04 13:30:36', '81985227078', 'PE', '51926921219', 'RS', '00:14:02');
 insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-07-04 18:24:06', '81985133616', 'PE', '11923554170', 'SP', '0:40:15');
 insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-09-23 15:53:09', '81985278243', 'PE', '71925162564', 'BA', '0:28:29');
 insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-03-05 05:27:30', '86985188070', 'PI', '47964249534', 'SC', '1:28:31');
