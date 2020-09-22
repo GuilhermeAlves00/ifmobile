@@ -1,132 +1,171 @@
-CREATE DATABASE ifmobile;
+--CREATE DATABASE ifmobile;
 
 DROP TABLE IF EXISTS cobertura CASCADE;
 DROP TABLE IF EXISTS estado CASCADE;
 DROP TABLE IF EXISTS cidade CASCADE;
 DROP TABLE IF EXISTS cliente CASCADE;
+DROP TABLE IF EXISTS operadora CASCADE;
+DROP TABLE IF EXISTS plano CASCADE;
+DROP TABLE IF EXISTS tarifa CASCADE;
+DROP TABLE IF EXISTS plano_tarifa CASCADE;
 DROP TABLE IF EXISTS chip CASCADE;
 DROP TABLE IF EXISTS cliente_chip CASCADE;
-DROP TABLE IF EXISTS auditoria CASCADE;
-DROP TABLE IF EXISTS tarifa CASCADE;
-DROP TABLE IF EXISTS plano CASCADE;
-DROP TABLE IF EXISTS fatura CASCADE; 
 DROP TABLE IF EXISTS ligacao CASCADE;
+DROP TABLE IF EXISTS fatura CASCADE;
+DROP TABLE IF EXISTS auditoria CASCADE;
 
-CREATE TABLE estado(
-    uf CHAR(2) NOT NULL,
-    nome VARCHAR(40) NOT NULL,
-    ddd INTEGER NOT NULL,
-    CONSTRAINT PK_estado PRIMARY KEY(uf),
-    CONSTRAINT UNQ_estado UNIQUE(ddd)
+
+CREATE TABLE cobertura
+(
+  idRegiao SERIAL NOT NULL,
+  descricao varchar(40) NOT NULL,
+  CONSTRAINT PK_cobertura PRIMARY KEY (idRegiao)
 );
 
-CREATE TABLE cobertura(
-    uf CHAR(2) NOT NULL,
-    ddd INTEGER NOT NULL,
-    CONSTRAINT PK_cobertura PRIMARY KEY(uf),
-    CONSTRAINT FK_cobertura_estado FOREIGN KEY(uf) REFERENCES estado(uf),
-    CONSTRAINT UNQ_cobertura UNIQUE(ddd)
+
+CREATE TABLE estado
+(
+  uf char(2) NOT NULL,
+  nome varchar(40) NOT NULL,
+  ddd int NOT NULL,
+  idRegiao int NOT NULL,
+  CONSTRAINT PK_estado PRIMARY KEY (uf),
+  CONSTRAINT UQ_estado_ddd UNIQUE(ddd),
+  CONSTRAINT FK_estado_idregiao FOREIGN KEY (idRegiao) REFERENCES cobertura
 );
 
-CREATE TABLE cidade(
-    idCidade SERIAL NOT NULL,
-    nome VARCHAR(50) NOT NULL,
-    uf CHAR(2) NOT NULL,
-    CONSTRAINT PK_cidade PRIMARY KEY(idCidade),
-    CONSTRAINT FK_cidade_estado FOREIGN KEY(uf) REFERENCES estado(uf)
+
+CREATE TABLE cidade 
+(
+  idCidade SERIAL NOT NULL,
+  nome varchar(50) NOT NULL,
+  uf char(2) NOT NULL,
+  CONSTRAINT PK_cidade PRIMARY KEY (idCidade),
+  CONSTRAINT FK_cidade_estado FOREIGN KEY (uf) REFERENCES estado
 );
 
-CREATE TABLE cliente(
-    idCliente SERIAL NOT NULL,
-    nome VARCHAR(50) NOT NULL,
-    endereco VARCHAR(60) NOT NULL,
-    bairro VARCHAR(30) NOT NULL,
-    idCidade INTEGER NOT NULL,
-    dataCadastro DATE NOT NULL,
-    cancelado CHAR(1) NOT NULL DEFAULT 'N',
-    CONSTRAINT PK_cliente PRIMARY KEY(idCliente),
-    CONSTRAINT FK_cliente_cidade FOREIGN KEY(idCidade) REFERENCES cidade(idCidade),
-    CONSTRAINT CHK_cliente_cancelado CHECK (cancelado = 'S' OR cancelado = 'N')
+
+CREATE TABLE cliente
+(
+  idCliente SERIAL NOT NULL,
+  nome varchar(50)NOT NULL,
+  endereco varchar(60),
+  bairro varchar(30),
+  idCidade int NOT NULL,
+  dataCadastro date,
+  cancelado char(1) DEFAULT 'N'	NOT NULL,
+  CONSTRAINT PK_cliente PRIMARY KEY (idCliente),
+  CONSTRAINT FK_cliente_cidade FOREIGN KEY (idCidade) REFERENCES cidade,
+  CONSTRAINT CK_cliente_cancelado CHECK (cancelado = 'S' or cancelado = 'N')
 );
 
-CREATE TABLE tarifa(
-    idTarifa SERIAL NOT NULL,
-    descricao VARCHAR(50) NOT NULL,
-    valor DECIMAL NOT NULL DEFAULT 0,
-    CONSTRAINT PK_tarifa PRIMARY KEY(idTarifa)
+CREATE TABLE operadora
+(
+  idOperadora SERIAL NOT NULL,
+  nome varchar(40) NOT NULL,
+  CONSTRAINT PK_operadora PRIMARY KEY (idOperadora)
 );
 
-CREATE TABLE plano(
-    idPlano SERIAL NOT NULL,
-    descricao VARCHAR(50) NOT NULL,
-    fminIn INTEGER NOT NULL DEFAULT 0,
-    fminOut INTEGER NOT NULL DEFAULT 0,
-    addLigacao INTEGER NOT NULL,
-    roaming INTEGER NOT NULL,
-    valor DECIMAL NOT NULL,
-    CONSTRAINT PK_plano PRIMARY KEY(idPlano),
-    CONSTRAINT FK_plano_tarifa_addLigacao FOREIGN KEY(addLigacao) REFERENCES tarifa(idTarifa),
-    CONSTRAINT FK_plano_tarifa_roaming FOREIGN KEY(roaming) REFERENCES tarifa(idTarifa)
+
+CREATE TABLE plano
+(
+  idPlano SERIAL NOT NULL,
+  descricao	varchar(50)	NOT NULL,
+  fminIn int DEFAULT 0 NOT NULL,
+  fminOut int DEFAULT 0	NOT NULL,
+  valor numeric(7,2) NOT NULL,
+  CONSTRAINT PK_plano PRIMARY KEY (idPlano)
 );
 
-CREATE TABLE chip(
-    idNumero CHAR(11) NOT NULL,
-    idPlano INTEGER NOT NULL,
-    ativo CHAR(1) NOT NULL DEFAULT 'S',
-    disponivel CHAR(1) NOT NULL DEFAULT 'S',
-    CONSTRAINT PK_chip PRIMARY KEY(idNumero),
-    CONSTRAINT FK_plano FOREIGN KEY(idPlano) REFERENCES plano(idPlano),
-    CONSTRAINT CHK_chip_ativo CHECK (ativo = 'S' OR ativo = 'N'),
-    CONSTRAINT CHK_chip_disponivel CHECK (disponivel = 'S' OR disponivel = 'N')
-    --CONSTRAINT CHK_idNumero CHECK (idNumero LIKE '###985[1-2]#####')
+
+CREATE TABLE tarifa
+(
+  idTarifa SERIAL NOT NULL,
+  descricao	varchar(50)	NOT NULL,
+  valor	numeric(5,2) DEFAULT 0 NOT NULL,
+  CONSTRAINT PK_tarifa PRIMARY KEY (idTarifa)
 );
 
-CREATE TABLE cliente_chip(
-    idNumero CHAR(11) NOT NULL,
-    idCliente INTEGER NOT NULL,
-    CONSTRAINT PK_cliente_chip PRIMARY KEY(idCliente, idNumero),
-    CONSTRAINT FK_cliente_chip_idCliente FOREIGN KEY(idCliente) REFERENCES cliente(idCliente),
-    CONSTRAINT FK_cliente_chip_idNumero FOREIGN KEY(idNumero) REFERENCES chip(idNumero)
+
+CREATE TABLE plano_tarifa
+(
+  idPlano int NOT NULL,
+  idTarifa int NOT NULL,
+  CONSTRAINT PK_plano_tarifa PRIMARY KEY (idPlano,idTarifa),
+  CONSTRAINT FK_plano_tarifa_idPlano FOREIGN KEY (idPlano) REFERENCES plano,
+  CONSTRAINT FK_plano_tarifa_idTarifa FOREIGN KEY (idTarifa) REFERENCES tarifa
+ 
 );
 
-CREATE TABLE auditoria(
-    idCliente INTEGER NOT NULL,
-    idNumero CHAR(11) NOT NULL,
-    dataInicio DATE NOT NULL,
-    dataTermino DATE NOT NULL,
-    CONSTRAINT PK_auditoria PRIMARY KEY(idCliente, idNumero, dataInicio),
-    CONSTRAINT FK_cliente_chip_idCliente FOREIGN KEY(idCliente) REFERENCES cliente(idCliente),
-    CONSTRAINT FK_cliente_chip_idNumero FOREIGN KEY(idNumero) REFERENCES chip(idNumero)
+
+CREATE TABLE chip
+(
+  idNumero char(11)	NOT NULL,
+  idOperadora int NOT NULL,
+  idPlano int NOT NULL,
+  ativo	char(1)	DEFAULT 'S' NOT NULL,
+  disponivel char(1) DEFAULT 'S' NOT NULL,
+  CONSTRAINT PK_chip PRIMARY KEY (idNumero),
+  CONSTRAINT FK_chip_idOperadora FOREIGN KEY (idOperadora) REFERENCES operadora,
+  CONSTRAINT FK_chip_idPlano FOREIGN KEY (idPlano) REFERENCES plano,
+  CONSTRAINT CK_chip_ativo CHECK (ativo = 'S' or ativo = 'N'),
+  CONSTRAINT CK_chip_disponivel CHECK (disponivel = 'S' or disponivel = 'N')
 );
 
-CREATE TABLE fatura(
-    referencia DATE NOT NULL,
-    idNumero CHAR(11) NOT NULL,
-    valorPlano NUMERIC NOT NULL,
-    totMinIn INTEGER NOT NULL,
-    totMinOut INTEGER NOT NULL,
-    txMinExced NUMERIC,
-    txRoaming NUMERIC,
-    total NUMERIC,
-    pago CHAR(1) NOT NULL DEFAULT 'N',
-    CONSTRAINT PK_referencia PRIMARY KEY(referencia),
-    CONSTRAINT FK_fatura_chip_idNumero FOREIGN KEY(idNumero) REFERENCES chip(idNumero),
-    CONSTRAINT CHK_pago CHECK (pago = 'S' or pago = 'N')
+
+CREATE TABLE cliente_chip
+(
+  idNumero char(11)	NOT NULL,
+  idCliente	int	NOT NULL,
+  CONSTRAINT PK_cliente_chip PRIMARY KEY (idNumero,idCliente),
+  CONSTRAINT FK_cliente_chip_idNumero FOREIGN KEY (idNumero) REFERENCES chip,
+  CONSTRAINT FK_cliente_chip_cliente FOREIGN KEY (idCliente) REFERENCES cliente
 );
 
-CREATE TABLE ligacao(
-    dataLig TIMESTAMP NOT NULL,
-    chipEmissor CHAR(11) NOT NULL,
-    ufOrigem CHAR(2) NOT NULL,
-    chipReceptor CHAR(11) NOT NULL,
-    ufDestino CHAR(2) NOT NULL,
-    duracao TIME NOT NULL,
-    CONSTRAINT PK_dataLig PRIMARY KEY(dataLig),
-    CONSTRAINT FK_ligacao_estado_chipEmissor FOREIGN KEY(chipEmissor) REFERENCES chip(idNumero),
-    CONSTRAINT FK_ligacao_estado_ufOrigem FOREIGN KEY(ufOrigem) REFERENCES estado(uf),
-    CONSTRAINT FK_ligacao_estado_ufDestino FOREIGN KEY(ufDestino) REFERENCES estado(uf)
+
+CREATE TABLE ligacao
+(
+  dataLig timestamp NOT NULL,
+  chip_emissor char(11)	NOT NULL,
+  ufOrigem char(2) NOT NULL,
+  chip_receptor	char(11) NOT NULL,
+  ufDestino char(2)	NOT NULL,
+  duracao time NOT NULL,
+  CONSTRAINT PK_ligacao PRIMARY KEY (dataLig),
+  CONSTRAINT FK_ligacao_chip_emissor FOREIGN KEY (chip_emissor) REFERENCES chip,
+  CONSTRAINT FK_ligacao_ufOrigem FOREIGN KEY (ufOrigem) REFERENCES estado,
+  CONSTRAINT FK_ligacao_chip_receptor FOREIGN KEY (chip_receptor) REFERENCES chip,
+  CONSTRAINT FK_ligacao_ufDestino FOREIGN KEY (ufDestino) REFERENCES estado
 );
 
+
+CREATE TABLE fatura
+(
+  referencia date NOT NULL,
+  idNumero char(11)	NOT NULL,
+  valor_plano numeric(7,2) NOT NULL,
+  tot_min_int int NOT NULL,
+  tot_min_ext int NOT NULL,
+  tx_min_exced numeric(5,2)	NOT NULL,
+  tx_roaming numeric(5,2) NOT NULL,
+  total numeric(7,2) NOT NULL,
+  pago char(1) DEFAULT 'N' NOT NULL,
+  CONSTRAINT PK_fatura PRIMARY KEY (referencia,idNumero),
+  CONSTRAINT FK_fatura_idNumero FOREIGN KEY (idNumero) REFERENCES chip,
+  CONSTRAINT CK_fatura_pago CHECK (pago = 'S' or pago = 'N')
+);
+
+
+CREATE TABLE auditoria
+(
+  idNumero char(11)	NOT NULL,
+  idCliente	int	NOT NULL,
+  dataInicio date NOT NULL,
+  dataTermino date NOT NULL,
+  CONSTRAINT PK_auditoria PRIMARY KEY (idNumero,idCliente,dataInicio),
+  CONSTRAINT FK_auditoria_idNumero FOREIGN KEY (idNumero) REFERENCES chip,
+  CONSTRAINT FK_auditoria_idCliente FOREIGN KEY (idCliente) REFERENCES cliente	
+);
 
 
 

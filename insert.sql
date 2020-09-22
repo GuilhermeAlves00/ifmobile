@@ -1,62 +1,63 @@
---table estados
-
-INSERT INTO estado (uf, nome, ddd) VALUES ('DF', 'Distrito Federal', 61);
-INSERT INTO estado (uf, nome, ddd) VALUES ('GO', 'Goiás', 62);
-INSERT INTO estado (uf, nome, ddd) VALUES ('MT', 'Mato Grosso', 65);
-INSERT INTO estado (uf, nome, ddd) VALUES ('MS', 'Mato Grosso do Sul', 67);
-INSERT INTO estado (uf, nome, ddd) VALUES ('AL', 'Alagoas', 82);
-INSERT INTO estado (uf, nome, ddd) VALUES ('BA', 'Bahia', 71);
-INSERT INTO estado (uf, nome, ddd) VALUES ('CE', 'Ceará', 85);
-INSERT INTO estado (uf, nome, ddd) VALUES ('MA', 'Maranhão', 98);
-INSERT INTO estado (uf, nome, ddd) VALUES ('PB', 'Paraíba', 83);
-INSERT INTO estado (uf, nome, ddd) VALUES ('PE', 'Pernambuco', 81);
-INSERT INTO estado (uf, nome, ddd) VALUES ('PI', 'Piauí', 86);
-INSERT INTO estado (uf, nome, ddd) VALUES ('RN', 'Rio Grande do Norte', 84);
-INSERT INTO estado (uf, nome, ddd) VALUES ('SE', 'Sergipe', 79);
-INSERT INTO estado (uf, nome, ddd) VALUES ('AC', 'Acre', 68);
-INSERT INTO estado (uf, nome, ddd) VALUES ('AP', 'Amapá', 96);
-INSERT INTO estado (uf, nome, ddd) VALUES ('AM', 'Amazonas', 92);
-INSERT INTO estado (uf, nome, ddd) VALUES ('PA', 'Pará', 91);
-INSERT INTO estado (uf, nome, ddd) VALUES ('RO', 'Rondônia', 69);
-INSERT INTO estado (uf, nome, ddd) VALUES ('RR', 'Roraima', 95);
-INSERT INTO estado (uf, nome, ddd) VALUES ('TO', 'Tocantins', 63);
-INSERT INTO estado (uf, nome, ddd) VALUES ('ES', 'Espírito Santo', 27);
-INSERT INTO estado (uf, nome, ddd) VALUES ('MG', 'Minas Gerais', 31);
-INSERT INTO estado (uf, nome, ddd) VALUES ('RJ', 'Rio de Janeiro', 21);
-INSERT INTO estado (uf, nome, ddd) VALUES ('SP', 'São Paulo', 11);
-INSERT INTO estado (uf, nome, ddd) VALUES ('PR', 'Paraná', 41);
-INSERT INTO estado (uf, nome, ddd) VALUES ('RS', 'Rio Grande do Sul', 51);
-INSERT INTO estado (uf, nome, ddd) VALUES ('SC', 'Santa Catarina', 47);
-
 --table cobertura
 
-INSERT INTO cobertura (uf, ddd) VALUES ('DF', 61);
-INSERT INTO cobertura (uf, ddd) VALUES ('GO', 62);
-INSERT INTO cobertura (uf, ddd) VALUES ('MT', 65);
-INSERT INTO cobertura (uf, ddd) VALUES ('MS', 67);
-INSERT INTO cobertura (uf, ddd) VALUES ('AL', 82);
-INSERT INTO cobertura (uf, ddd) VALUES ('BA', 71);
-INSERT INTO cobertura (uf, ddd) VALUES ('CE', 85);
-INSERT INTO cobertura (uf, ddd) VALUES ('MA', 98);
-INSERT INTO cobertura (uf, ddd) VALUES ('PB', 83);
-INSERT INTO cobertura (uf, ddd) VALUES ('PE', 81);
-INSERT INTO cobertura (uf, ddd) VALUES ('PI', 86);
-INSERT INTO cobertura (uf, ddd) VALUES ('RN', 84);
-INSERT INTO cobertura (uf, ddd) VALUES ('SE', 79);
-INSERT INTO cobertura (uf, ddd) VALUES ('AC', 68);
-INSERT INTO cobertura (uf, ddd) VALUES ('AP', 96);
-INSERT INTO cobertura (uf, ddd) VALUES ('AM', 92);
-INSERT INTO cobertura (uf, ddd) VALUES ('PA', 91);
-INSERT INTO cobertura (uf, ddd) VALUES ('RO', 69);
-INSERT INTO cobertura (uf, ddd) VALUES ('RR', 95);
-INSERT INTO cobertura (uf, ddd) VALUES ('TO', 63);
-INSERT INTO cobertura (uf, ddd) VALUES ('ES', 27);
-INSERT INTO cobertura (uf, ddd) VALUES ('MG', 31);
-INSERT INTO cobertura (uf, ddd) VALUES ('RJ', 21);
-INSERT INTO cobertura (uf, ddd) VALUES ('SP', 11);
-INSERT INTO cobertura (uf, ddd) VALUES ('PR', 41);
-INSERT INTO cobertura (uf, ddd) VALUES ('RS', 51);
-INSERT INTO cobertura (uf, ddd) VALUES ('SC', 47);
+INSERT INTO cobertura (descricao) VALUES ('Distrito Federal');
+INSERT INTO cobertura (descricao) VALUES ('Goiás');
+INSERT INTO cobertura (descricao) VALUES ('Mato Grosso');
+INSERT INTO cobertura (descricao) VALUES ('Mato Grosso do Sul');
+INSERT INTO cobertura (descricao) VALUES ('Alagoas');
+INSERT INTO cobertura (descricao) VALUES ('Bahia');
+INSERT INTO cobertura (descricao) VALUES ('Ceará');
+INSERT INTO cobertura (descricao) VALUES ('Maranhão');
+INSERT INTO cobertura (descricao) VALUES ('Paraíba');
+INSERT INTO cobertura (descricao) VALUES ('Pernambuco');
+INSERT INTO cobertura (descricao) VALUES ('Piauí');
+INSERT INTO cobertura (descricao) VALUES ('Rio Grande do Norte');
+INSERT INTO cobertura (descricao) VALUES ('Sergipe');
+INSERT INTO cobertura (descricao) VALUES ('Acre');
+INSERT INTO cobertura (descricao) VALUES ('Amapá');
+INSERT INTO cobertura (descricao) VALUES ('Amazonas');
+INSERT INTO cobertura (descricao) VALUES ('Pará');
+INSERT INTO cobertura (descricao) VALUES ('Rondônia');
+INSERT INTO cobertura (descricao) VALUES ('Roraima');
+INSERT INTO cobertura (descricao) VALUES ('Tocantins');
+INSERT INTO cobertura (descricao) VALUES ('Espírito Santo');
+INSERT INTO cobertura (descricao) VALUES ('Minas Gerais');
+INSERT INTO cobertura (descricao) VALUES ('Rio de Janeiro');
+INSERT INTO cobertura (descricao) VALUES ('São Paulo');
+INSERT INTO cobertura (descricao) VALUES ('Paraná');
+INSERT INTO cobertura (descricao) VALUES ('Rio Grande do Sul');
+INSERT INTO cobertura (descricao) VALUES ('Santa Catarina');
+
+--table estados
+
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('DF', 'Distrito Federal', 61, 1);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('GO', 'Goiás', 62, 2);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('MT', 'Mato Grosso', 65, 3);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('MS', 'Mato Grosso do Sul', 67, 4);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('AL', 'Alagoas', 82, 5);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('BA', 'Bahia', 71, 6);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('CE', 'Ceará', 85, 7);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('MA', 'Maranhão', 98, 8);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('PB', 'Paraíba', 83, 9);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('PE', 'Pernambuco', 81, 10);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('PI', 'Piauí', 86, 11);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('RN', 'Rio Grande do Norte', 84, 12);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('SE', 'Sergipe', 79, 13);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('AC', 'Acre', 68, 14);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('AP', 'Amapá', 96, 15);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('AM', 'Amazonas', 92, 16);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('PA', 'Pará', 91, 17);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('RO', 'Rondônia', 69, 18);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('RR', 'Roraima', 95, 19);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('TO', 'Tocantins', 63, 20);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('ES', 'Espírito Santo', 27, 21);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('MG', 'Minas Gerais', 31, 22);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('RJ', 'Rio de Janeiro', 21, 23);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('SP', 'São Paulo', 11, 24);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('PR', 'Paraná', 41, 25);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('RS', 'Rio Grande do Sul', 51, 26);
+INSERT INTO estado (uf, nome, ddd, idRegiao) VALUES ('SC', 'Santa Catarina', 47, 27);
+
 
 --table cidade
 
@@ -2763,86 +2764,105 @@ INSERT INTO cidade (nome, uf) VALUES ('Caturaí', 'GO');
 
 --table cliente
 
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Delfim Pimentel Macena', 'Avenida Almirante Maximiano Fonseca-873', 'Novo Buritizal', 328, '5/11/2019');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Emídio Alcântara Aragão', 'Avenida Governador José Malcher-169', 'Cachoeirinha', 1258, '26/3/2019');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Isis Cavaco Castanheda', 'Rua Barão de Vitória-637', 'Nova Baden', 490, '17/5/2017');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Mateus Assunção Leão', 'Avenida Maria Luísa do Val Penteado-452', 'Tabuleta', 1599, '9/12/2019');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Julianna Kruse', 'Rua Tenente-Coronel Cardoso-595', 'Plano Diretor Sul', 1673, '16/3/2019');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro, cancelado) values ('Délcio Silvestre Mafra', 'Rua Arlindo Nogueira-56', 'Perová', 646, '9/12/2019', 'S');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Zita Barateiro Carromeu', 'Rua Pereira Estéfano-164', 'Farrapos', 723, '17/9/2017');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Adalberto Barrocas Aldeia', 'Avenida Rio Branco-852', 'Pedrinhas', 853, '27/7/2020');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Anabel Pinto Candal', 'Rua da Imprensa-246', 'Boa Vista II', 2418, '22/11/2017');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Lisa Torreiro Serpa', 'Rua Frederico Moura-715', 'Monte Líbano', 1809, '28/1/2020');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Eliza Lourenço Figueiredo', 'Rua Cândido Portinari-134', 'Guará I', 1563, '23/5/2017');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Ester Pinto Morais', 'Avenida Tocantins-533', 'Santa Cecília', 152, '19/2/2019');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Kévim Tabanez Tinoco', 'Rua das Fiandeiras-533', 'Novo Horizonte', 288, '23/1/2019');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro, cancelado) values ('Estevão Vilante Furtado', 'Rua Serra de Bragança-86', 'Jardim dos Monólitos', 2327, '7/2/2019', 'S');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Igor Doutis Prudente', 'Avenida Desembargador Moreira-317', 'Centro', 1282, '25/7/2016');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Xavier Modesto Jorge', 'Avenida Almirante Maximiano Fonseca-409', 'Nova Estação', 2580, '30/7/2019');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Gabriel Vilela Ramos', 'Avenida Esbertalina Barbosa Damiani-465', 'João Eduardo II', 1251, '16/3/2017');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Elena Carmona Moutinho', 'Rodovia Raposo Tavares-899', 'Alto do Garrote', 431, '3/1/2019');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Tomás Barbosa Imperial', 'Rua Domingos Olímpio-695', 'Porto de Antas', 367, '30/5/2018');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Aicha Valério Passarinho', 'Rua Tenente-Coronel Cardoso-598', 'Heliópolis', 1031, '19/12/2018');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Leah Lopes Dias', 'Avenida São João-525', 'Ano Bom', 2599, '8/4/2019');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Valdemar Quental Matias', 'Rua Cristiano Olsen-586', 'Conjunto Ouricurí', 2509, '21/8/2016');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Mark Quintais Azevedo', 'Rua dos Carijós-169', 'Cidade Nova', 1526, '16/12/2017');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Mellisent Semken', 'Avenida Tocantins-656', 'São Lucas', 2294, '26/7/2016');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Lui Dourado Alpuim', 'Rua Arlindo Nogueira-598', 'Feitosa', 169, '5/8/2020');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Claúdio Pereira Pedroso', 'Rua da Imprensa-25', 'Tancredo Neves', 2507, '14/7/2016');
-insert into cliente (nome, endereco, bairro ,idCidade, dataCadastro) values ('Diogo Abranches Sousa', 'Rua Paracatu-756', 'Park das Águas Bonitas II', 1299, '22/7/2017');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Valter Bessa Negrão', 'Rua Paracatu-753', 'Zabelê', 764, '7/12/2017');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro, cancelado) values ('Haniel Brito Reis', 'Rua Carlos Augusto Cornelsen-32', 'Plano Diretor Sul', 829, '14/6/2018', 'S');
-insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Rubi Baptista Tuna', 'Avenida Evilásio Oenning-880', 'Alcântara', 2000, '14/06/2015');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Delfim Pimentel Macena', 'Avenida Almirante Maximiano Fonseca-873', 'Novo Buritizal', 328, '5/11/2019');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Emídio Alcântara Aragão', 'Avenida Governador José Malcher-169', 'Cachoeirinha', 1258, '26/3/2019');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Isis Cavaco Castanheda', 'Rua Barão de Vitória-637', 'Nova Baden', 490, '17/5/2017');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Mateus Assunção Leão', 'Avenida Maria Luísa do Val Penteado-452', 'Tabuleta', 1599, '9/12/2019');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Julianna Kruse', 'Rua Tenente-Coronel Cardoso-595', 'Plano Diretor Sul', 1673, '16/3/2019');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Délcio Silvestre Mafra', 'Rua Arlindo Nogueira-56', 'Perová', 646, '9/12/2019');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Zita Barateiro Carromeu', 'Rua Pereira Estéfano-164', 'Farrapos', 723, '17/9/2017');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Adalberto Barrocas Aldeia', 'Avenida Rio Branco-852', 'Pedrinhas', 853, '27/7/2020');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Anabel Pinto Candal', 'Rua da Imprensa-246', 'Boa Vista II', 2418, '22/11/2017');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Lisa Torreiro Serpa', 'Rua Frederico Moura-715', 'Monte Líbano', 1809, '28/1/2020');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Eliza Lourenço Figueiredo', 'Rua Cândido Portinari-134', 'Guará I', 1563, '23/5/2017');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Ester Pinto Morais', 'Avenida Tocantins-533', 'Santa Cecília', 152, '19/2/2019');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Kévim Tabanez Tinoco', 'Rua das Fiandeiras-533', 'Novo Horizonte', 288, '23/1/2019');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro, cancelado) values ('Estevão Vilante Furtado', 'Rua Serra de Bragança-86', 'Jardim dos Monólitos', 2327, '7/2/2019', 'S');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Igor Doutis Prudente', 'Avenida Desembargador Moreira-317', 'Centro', 1282, '25/7/2016');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Xavier Modesto Jorge', 'Avenida Almirante Maximiano Fonseca-409', 'Nova Estação', 2580, '30/7/2019');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Gabriel Vilela Ramos', 'Avenida Esbertalina Barbosa Damiani-465', 'João Eduardo II', 1251, '16/3/2017');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Elena Carmona Moutinho', 'Rodovia Raposo Tavares-899', 'Alto do Garrote', 431, '3/1/2019');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Tomás Barbosa Imperial', 'Rua Domingos Olímpio-695', 'Porto de Antas', 367, '30/5/2018');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Aicha Valério Passarinho', 'Rua Tenente-Coronel Cardoso-598', 'Heliópolis', 1031, '19/12/2018');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Leah Lopes Dias', 'Avenida São João-525', 'Ano Bom', 2599, '8/4/2019');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Valdemar Quental Matias', 'Rua Cristiano Olsen-586', 'Conjunto Ouricurí', 2509, '21/8/2016');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Mark Quintais Azevedo', 'Rua dos Carijós-169', 'Cidade Nova', 1526, '16/12/2017');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Mellisent Semken', 'Avenida Tocantins-656', 'São Lucas', 2294, '26/7/2016');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Lui Dourado Alpuim', 'Rua Arlindo Nogueira-598', 'Feitosa', 169, '5/8/2020');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Claúdio Pereira Pedroso', 'Rua da Imprensa-25', 'Tancredo Neves', 2507, '14/7/2016');
+insert into cliente (nome, endereco, bairro ,idCidade, dataLigCadastro) values ('Diogo Abranches Sousa', 'Rua Paracatu-756', 'Park das Águas Bonitas II', 1299, '22/7/2017');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Valter Bessa Negrão', 'Rua Paracatu-753', 'Zabelê', 764, '7/12/2017');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Haniel Brito Reis', 'Rua Carlos Augusto Cornelsen-32', 'Plano Diretor Sul', 829, '14/6/2018');
+insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Rubi Baptista Tuna', 'Avenida Evilásio Oenning-880', 'Alcântara', 2000, '14/06/2015');
 
+--table operadora
 
---table tarifa
-
-insert into tarifa (descricao, valor) values ('tarifa x', 0.20);
-insert into tarifa (descricao, valor) values ('tarifa x', 0.20);
-insert into tarifa (descricao, valor) values ('tarifa x', 0.20);
-insert into tarifa (descricao, valor) values ('tarifa x', 0.20);
-insert into tarifa (descricao, valor) values ('tarifa x', 0.20);
-insert into tarifa (descricao, valor) values ('tarifa y', 0.40);
-insert into tarifa (descricao, valor) values ('tarifa y', 0.40);
-insert into tarifa (descricao, valor) values ('tarifa y', 0.40);
-insert into tarifa (descricao, valor) values ('tarifa y', 0.40);
-insert into tarifa (descricao, valor) values ('tarifa y', 0.40);
+insert into operadora (nome) values('Oi');
+insert into operadora (nome) values('Claro');
+insert into operadora (nome) values('Vivo');
+insert into operadora (nome) values('Tim');
+insert into operadora (nome) values('Nextel');
+insert into operadora (nome) values('Algar');
 
 --table plano
 
-insert into plano (descricao, addLigacao, roaming, valor) values('plano x', 0.99, 1.99, 39.99);
-insert into plano (descricao, addLigacao, roaming, valor) values('plano x', 0.99, 1.99, 39.99);
-insert into plano (descricao, addLigacao, roaming, valor) values('plano x', 0.99, 1.99, 39.99);
-insert into plano (descricao, addLigacao, roaming, valor) values('plano x', 0.99, 1.99, 39.99);
-insert into plano (descricao, addLigacao, roaming, valor) values('plano x', 0.99, 1.99, 39.99);
-insert into plano (descricao, addLigacao, roaming, valor) values('plano y', 1.99, 2.99, 49.99);
-insert into plano (descricao, addLigacao, roaming, valor) values('plano y', 1.99, 2.99, 49.99);
-insert into plano (descricao, addLigacao, roaming, valor) values('plano y', 1.99, 2.99, 49.99);
-insert into plano (descricao, addLigacao, roaming, valor) values('plano y', 1.99, 2.99, 49.99);
-insert into plano (descricao, addLigacao, roaming, valor) values('plano y', 1.99, 2.99, 49.99);
-insert into plano (descricao, addLigacao, roaming, valor) values('plano x', 0.99, 1.99, 39.99);
-insert into plano (descricao, addLigacao, roaming, valor) values('plano y', 1.99, 2.99, 49.99);
-insert into plano (descricao, addLigacao, roaming, valor) values('plano x', 0.99, 1.99, 39.99);
-insert into plano (descricao, addLigacao, roaming, valor) values('plano y', 1.99, 2.99, 49.99);
-insert into plano (descricao, addLigacao, roaming, valor) values('plano x', 0.99, 1.99, 39.99);
+insert into plano (descricao, fminIn, fminOut, valor) values('plano x da Oi', 40, 20, 39.99);
+insert into plano (descricao, fminIn, fminOut, valor) values('plano x da Claro', 40, 20, 39.99);
+insert into plano (descricao, fminIn, fminOut, valor) values('plano x da Vivo', 40, 20, 39.99);
+insert into plano (descricao, fminIn, fminOut, valor) values('plano x da Tim', 40, 20, 39.99);
+insert into plano (descricao, fminIn, fminOut, valor) values('plano x da Nextel', 40, 20, 39.99);
+insert into plano (descricao, fminIn, fminOut, valor) values('plano x da Algar', 40, 20, 39.99);
+--insert into plano (descricao, fminIn, fminOut, valor) values('plano y da Oi', 60, 30, 49.99);
+--insert into plano (descricao, fminIn, fminOut, valor) values('plano y da Claro', 60, 30, 49.99);
+--insert into plano (descricao, fminIn, fminOut, valor) values('plano y da Vivo', 60, 30, 49.99);
+--insert into plano (descricao, fminIn, fminOut, valor) values('plano y da Tim', 60, 30, 49.99);
+--insert into plano (descricao, fminIn, fminOut, valor) values('plano y da Nextel', 60, 30, 49.99);
+--insert into plano (descricao, fminIn, fminOut, valor) values('plano y da Algar', 60, 30, 49.99);
+
+--table tarifa
+
+insert into tarifa (descricao, valor) values ('Ligação em roaming', 0.20);
+insert into tarifa (descricao, valor) values ('Min adicional-ligação de mesma operadora', 0.20);
+insert into tarifa (descricao, valor) values ('Min adicional-ligação entre operadoras distintas', 0.40);
+
+--table plano_tarifa
+
+insert into plano_tarifa (idPlano, idTarifa) values (1,1);
+insert into plano_tarifa (idPlano, idTarifa) values (1,2);
+insert into plano_tarifa (idPlano, idTarifa) values (1,3);
+insert into plano_tarifa (idPlano, idTarifa) values (2,1);
+insert into plano_tarifa (idPlano, idTarifa) values (2,2);
+insert into plano_tarifa (idPlano, idTarifa) values (2,3);
+insert into plano_tarifa (idPlano, idTarifa) values (3,1);
+insert into plano_tarifa (idPlano, idTarifa) values (3,2);
+insert into plano_tarifa (idPlano, idTarifa) values (3,3);
+insert into plano_tarifa (idPlano, idTarifa) values (4,1);
+insert into plano_tarifa (idPlano, idTarifa) values (4,2);
+insert into plano_tarifa (idPlano, idTarifa) values (4,3);
+insert into plano_tarifa (idPlano, idTarifa) values (5,1);
+insert into plano_tarifa (idPlano, idTarifa) values (5,2);
+insert into plano_tarifa (idPlano, idTarifa) values (5,3);
+insert into plano_tarifa (idPlano, idTarifa) values (6,1);
+insert into plano_tarifa (idPlano, idTarifa) values (6,2);
+insert into plano_tarifa (idPlano, idTarifa) values (6,3);
 
 --table chip
 
-insert into chip (idNumero, idPlano, disponivel) values ('61985264220', 1, 'N');
-insert into chip (idNumero, idPlano, disponivel) values ('61985166894', 2, 'N');
-insert into chip (idNumero, idPlano, disponivel) values ('61985227078', 3, 'N');
-insert into chip (idNumero, idPlano, disponivel) values ('83985133616', 4, 'N');
-insert into chip (idNumero, idPlano, disponivel) values ('83985278243', 5, 'N');
-insert into chip (idNumero, idPlano, disponivel) values ('83985188070', 6, 'N');
-insert into chip (idNumero, idPlano, disponivel) values ('81985132407', 7, 'N');
-insert into chip (idNumero, idPlano, disponivel) values ('81985178495', 8, 'N');
-insert into chip (idNumero, idPlano, disponivel) values ('81985287835', 9, 'N');
-insert into chip (idNumero, idPlano, disponivel) values ('41985166779', 10, 'N');
-insert into chip (idNumero, idPlano, disponivel) values ('41985107774', 11, 'N'); 
-insert into chip (idNumero, idPlano, disponivel) values ('41985945580', 12, 'N');
-insert into chip (idNumero, idPlano, disponivel) values ('51985263032', 13, 'N');
-insert into chip (idNumero, idPlano, disponivel) values ('51985111498', 14, 'N');
-insert into chip (idNumero, idPlano, disponivel) values ('51985174577', 15, 'N');
+insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('61985264220', 1, 1, 'N');
+insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('61985166894', 1, 1, 'N');
+insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('61985227078', 1, 1, 'N');
+insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('83985133616', 2, 2, 'N');
+insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('83985278243', 2, 2, 'N');
+insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('83985188070', 2, 2, 'N');
+insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('81985132407', 3, 3, 'N');
+insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('81985178495', 3, 3, 'N');
+insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('81985287835', 3, 3, 'N');
+insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('41985166779', 4, 4, 'N');
+insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('41985107774', 4, 4, 'N'); 
+insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('41985945580', 4, 4, 'N');
+insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('51985263032', 5, 5, 'N');
+insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('51985111498', 6, 6, 'N');
+insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('51985174577', 6, 6, 'N');
         
 
 --table cliente_chip
@@ -2863,17 +2883,47 @@ insert into cliente_chip (idNumero, idCliente) values ('51985263032', 13);
 insert into cliente_chip (idNumero, idCliente) values ('51985111498', 14);
 insert into cliente_chip (idNumero, idCliente) values ('51985174577', 15);
 
+--table ligacao
 
---table auditoria
-
-insert into auditoria (idNumero, idCliente, dataInicio, dataTermino) values ('61985264220', 1, '22/09/2019', '10/11/2019');
-insert into auditoria (idNumero, idCliente, dataInicio, dataTermino) values ('61985166894', 2, '10/03/2019', '31/10/2019');
-insert into auditoria (idNumero, idCliente, dataInicio, dataTermino) values ('61985227078', 3, '10/06/2019', '16/11/2019');
-insert into auditoria (idNumero, idCliente, dataInicio, dataTermino) values ('83985133616', 4, '23/09/2019', '18/12/2019');
-insert into auditoria (idNumero, idCliente, dataInicio, dataTermino) values ('83985278243', 5, '27/09/2019', '29/11/2019');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2020-07-22 17:58:53', '61985264220', 'DF', '51985174577', 'RS', '0:47:59');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2020-03-12 21:14:52', '61985166894', 'DF', '41985945580', 'PR', '0:33:33');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2019-11-03 15:47:36', '61985227078', 'DF', '41985945580', 'PR', '1:38:39');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2019-11-04 13:30:36', '61985227078', 'DF', '51985111498', 'RS', '00:14:02');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2020-07-04 18:24:06', '83985133616', 'PB', '81985287835', 'PE', '0:40:15');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2019-09-23 15:53:09', '83985278243', 'PB', '81985287835', 'PE', '0:28:29');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2020-03-05 05:27:30', '83985188070', 'PB', '81985287835', 'PE', '1:28:31');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2020-02-10 20:57:27', '81985132407', 'PE', '81985287835', 'PE', '0:01:23');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2019-11-24 11:31:38', '81985178495', 'PE', '81985287835', 'PE', '0:06:00');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2020-05-04 19:15:46', '81985287835', 'PE', '83985188070', 'PB', '1:45:53');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2019-12-21 19:08:50', '41985166779', 'PR', '83985188070', 'PB', '0:55:28');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2020-01-21 20:48:03', '83985133616', 'PB', '83985188070', 'PB', '0:03:07');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2020-09-07 07:58:12', '83985188070', 'PB', '83985133616', 'PB', '0:27:33');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2020-07-16 15:34:08', '61985227078', 'DF', '83985188070', 'PB', '1:08:12');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2019-12-29 20:26:18', '83985188070', 'PB', '83985188070', 'PB', '0:20:30');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2019-11-15 12:13:13', '41985166779', 'PR', '61985264220', 'DF', '1:36:30');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2020-05-13 00:14:30', '61985227078', 'DF', '61985264220', 'DF', '1:32:58');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2020-08-14 04:26:53', '81985132407', 'PE', '61985264220', 'DF', '0:21:23');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2020-03-09 13:15:18', '61985227078', 'DF', '61985264220', 'DF', '1:52:14');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2020-05-28 01:27:48', '41985166779', 'PR', '61985264220', 'DF', '0:39:04');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2020-08-04 06:45:03', '81985132407', 'PE', '61985264220', 'DF', '0:32:20');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2019-12-05 10:01:09', '81985132407', 'PE', '61985264220', 'DF', '0:00:58');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2019-11-25 13:45:33', '61985227078', 'DF', '61985166894', 'DF', '0:06:01');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2019-10-29 14:07:45', '61985166894', 'DF', '51985111498', 'RS', '0:30:42');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2020-02-10 19:44:24', '81985132407', 'PE', '41985166779', 'PR', '1:36:19');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2017-06-30 13:45:29', '61985264220', 'DF', '41985166779', 'PR', '0:50:16');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2018-08-14 05:30:54', '61985264220', 'DF', '41985166779', 'PR', '0:14:35');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2019-11-09 05:30:54', '61985264220', 'DF', '41985166779', 'PR', '0:14:35');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2019-11-07 05:30:54', '61985264220', 'DF', '41985166779', 'PR', '0:09:14');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2019-11-05 05:30:54', '61985264220', 'DF', '41985166779', 'PR', '0:03:10');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2019-09-30 05:30:54', '61985264220', 'DF', '41985166779', 'PR', '0:24:47');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2019-09-17 21:09:15', '61985227078', 'DF', '83985278243', 'PB', '1:22:55');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2020-08-11 22:34:58', '41985166779', 'DF', '83985278243', 'PB', '0:30:51');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2020-01-24 08:33:18', '61985166894', 'DF', '83985278243', 'PB', '1:33:14');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2019-11-21 14:36:52', '41985166779', 'PR', '83985278243', 'PB', '1:52:14');
+insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2019-12-02 12:14:30', '61985166894', 'DF', '83985278243', 'PB', '0:19:51');
 
 --table fatura
-
+/*
 insert into fatura (referencia, idNumero, valorPlano, totMinIn, totMinOut, txMinExced, txRoaming, total) values ('30/09/2019', '61985264220', 39.99, 21, 20, null, null, null);
 insert into fatura (referencia, idNumero, valorPlano, totMinIn, totMinOut, txMinExced, txRoaming, total) values ('10/06/2020', '61985166894', 39.99, 29, 50, null, null, null);
 insert into fatura (referencia, idNumero, valorPlano, totMinIn, totMinOut, txMinExced, txRoaming, total) values ('04/12/2019', '61985227078', 39.99, 20, 38, null, null, null);
@@ -2885,42 +2935,12 @@ insert into fatura (referencia, idNumero, valorPlano, totMinIn, totMinOut, txMin
 insert into fatura (referencia, idNumero, valorPlano, totMinIn, totMinOut, txMinExced, txRoaming, total) values ('21/09/2019', '81985287835', 49.99, 41, 42, null, null, null);
 insert into fatura (referencia, idNumero, valorPlano, totMinIn, totMinOut, txMinExced, txRoaming, total) values ('27/05/2020', '41985166779', 49.99, 15, 24, null, null, null);
 insert into fatura (referencia, idNumero, valorPlano, totMinIn, totMinOut, txMinExced, txRoaming, total) values ('30/08/2020', '41985107774', 39.99, 56, 47, null, null, null);
+*/
 
---table ligacao
+--table auditoria
+insert into auditoria (idNumero, idCliente, dataInicio, dataTermino) values ('61985264220', 1, '22/09/2019', '10/11/2019');
+insert into auditoria (idNumero, idCliente, dataInicio, dataTermino) values ('61985166894', 2, '10/03/2019', '31/10/2019');
+insert into auditoria (idNumero, idCliente, dataInicio, dataTermino) values ('61985227078', 3, '10/06/2019', '16/11/2019');
+insert into auditoria (idNumero, idCliente, dataInicio, dataTermino) values ('83985133616', 4, '23/09/2019', '18/12/2019');
+insert into auditoria (idNumero, idCliente, dataInicio, dataTermino) values ('83985278243', 5, '27/09/2019', '29/11/2019');
 
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-07-22 17:58:53', '61985264220', 'DF', '79996698997', 'SE', '0:47:59');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-03-12 21:14:52', '61985166894', 'DF', '21936388177', 'RJ', '0:33:33');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-03 15:47:36', '61985227078', 'DF', '51926921219', 'RS', '1:38:39');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-04 13:30:36', '61985227078', 'DF', '51926921219', 'RS', '00:14:02');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-07-04 18:24:06', '83985133616', 'PB', '11923554170', 'SP', '0:40:15');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-09-23 15:53:09', '83985278243', 'PB', '71925162564', 'BA', '0:28:29');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-03-05 05:27:30', '83985188070', 'PB', '47964249534', 'SC', '1:28:31');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-02-10 20:57:27', '81985132407', 'PE', '81971728580', 'PE', '0:01:23');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-24 11:31:38', '81985178495', 'PE', '41982135848', 'PR', '0:06:00');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-05-04 19:15:46', '81985287835', 'PE', '11958819796', 'SP', '1:45:53');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-12-21 19:08:50', '41985166779', 'PR', '21953954535', 'RJ', '0:55:28');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-01-21 20:48:03', '83985133616', 'PB', '71937850660', 'BA', '0:03:07');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-09-07 07:58:12', '83985188070', 'PB', '69972532469', 'RO', '0:27:33');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-07-16 15:34:08', '61985227078', 'DF', '85902973685', 'CE', '1:08:12');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-12-29 20:26:18', '83985188070', 'PB', '11944479200', 'SP', '0:20:30');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-15 12:13:13', '41985166779', 'PR', '81961226223', 'PE', '1:36:30');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-05-13 00:14:30', '61985227078', 'DF', '63927834189', 'TO', '1:32:58');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-08-14 04:26:53', '81985132407', 'PE', '83970576208', 'PB', '0:21:23');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-03-09 13:15:18', '61985227078', 'DF', '85922602029', 'CE', '1:52:14');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-05-28 01:27:48', '41985166779', 'PR', '51909615771', 'RS', '0:39:04');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-08-04 06:45:03', '81985132407', 'PE', '11923372672', 'SP', '0:32:20');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-12-05 10:01:09', '81985132407', 'PE', '41972612901', 'PR', '0:00:58');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-25 13:45:33', '61985227078', 'DF', '83925720593', 'PB', '0:06:01');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-10-29 14:07:45', '61985166894', 'DF', '71929765212', 'BA', '0:30:42');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-02-10 19:44:24', '81985132407', 'PE', '41960576922', 'PR', '1:36:19');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-09-17 21:09:15', '61985227078', 'DF', '41908324362', 'PR', '1:22:55');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-08-11 22:34:58', '41985166779', 'DF', '62989110654', 'GO', '0:30:51');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2020-01-24 08:33:18', '61985166894', 'DF', '21974233907', 'RJ', '1:33:14');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-21 14:36:52', '41985166779', 'PR', '11989562082', 'SP', '1:52:14');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-12-02 12:14:30', '61985166894', 'DF', '79904820226', 'SE', '0:19:51');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2017-06-30 13:45:29', '61985264220', 'DF', '79996698997', 'SE', '0:50:16');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2018-08-14 05:30:54', '61985264220', 'DF', '79996698997', 'SE', '0:14:35');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-09 05:30:54', '61985264220', 'DF', '79996698997', 'SE', '0:14:35');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-07 05:30:54', '61985264220', 'DF', '79996698997', 'SE', '0:09:14');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-11-05 05:30:54', '61985264220', 'DF', '79996698997', 'SE', '0:03:10');
-insert into ligacao (dataLig, chipEmissor, ufOrigem, chipReceptor, ufDestino, duracao) values ('2019-09-30 05:30:54', '61985264220', 'DF', '79996698997', 'SE', '0:24:47');
