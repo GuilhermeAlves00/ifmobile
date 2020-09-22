@@ -2764,36 +2764,36 @@ INSERT INTO cidade (nome, uf) VALUES ('Caturaí', 'GO');
 
 --table cliente
 
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Delfim Pimentel Macena', 'Avenida Almirante Maximiano Fonseca-873', 'Novo Buritizal', 328, '5/11/2019');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Emídio Alcântara Aragão', 'Avenida Governador José Malcher-169', 'Cachoeirinha', 1258, '26/3/2019');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Isis Cavaco Castanheda', 'Rua Barão de Vitória-637', 'Nova Baden', 490, '17/5/2017');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Mateus Assunção Leão', 'Avenida Maria Luísa do Val Penteado-452', 'Tabuleta', 1599, '9/12/2019');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Julianna Kruse', 'Rua Tenente-Coronel Cardoso-595', 'Plano Diretor Sul', 1673, '16/3/2019');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Délcio Silvestre Mafra', 'Rua Arlindo Nogueira-56', 'Perová', 646, '9/12/2019');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Zita Barateiro Carromeu', 'Rua Pereira Estéfano-164', 'Farrapos', 723, '17/9/2017');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Adalberto Barrocas Aldeia', 'Avenida Rio Branco-852', 'Pedrinhas', 853, '27/7/2020');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Anabel Pinto Candal', 'Rua da Imprensa-246', 'Boa Vista II', 2418, '22/11/2017');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Lisa Torreiro Serpa', 'Rua Frederico Moura-715', 'Monte Líbano', 1809, '28/1/2020');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Eliza Lourenço Figueiredo', 'Rua Cândido Portinari-134', 'Guará I', 1563, '23/5/2017');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Ester Pinto Morais', 'Avenida Tocantins-533', 'Santa Cecília', 152, '19/2/2019');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Kévim Tabanez Tinoco', 'Rua das Fiandeiras-533', 'Novo Horizonte', 288, '23/1/2019');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro, cancelado) values ('Estevão Vilante Furtado', 'Rua Serra de Bragança-86', 'Jardim dos Monólitos', 2327, '7/2/2019', 'S');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Igor Doutis Prudente', 'Avenida Desembargador Moreira-317', 'Centro', 1282, '25/7/2016');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Xavier Modesto Jorge', 'Avenida Almirante Maximiano Fonseca-409', 'Nova Estação', 2580, '30/7/2019');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Gabriel Vilela Ramos', 'Avenida Esbertalina Barbosa Damiani-465', 'João Eduardo II', 1251, '16/3/2017');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Elena Carmona Moutinho', 'Rodovia Raposo Tavares-899', 'Alto do Garrote', 431, '3/1/2019');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Tomás Barbosa Imperial', 'Rua Domingos Olímpio-695', 'Porto de Antas', 367, '30/5/2018');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Aicha Valério Passarinho', 'Rua Tenente-Coronel Cardoso-598', 'Heliópolis', 1031, '19/12/2018');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Leah Lopes Dias', 'Avenida São João-525', 'Ano Bom', 2599, '8/4/2019');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Valdemar Quental Matias', 'Rua Cristiano Olsen-586', 'Conjunto Ouricurí', 2509, '21/8/2016');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Mark Quintais Azevedo', 'Rua dos Carijós-169', 'Cidade Nova', 1526, '16/12/2017');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Mellisent Semken', 'Avenida Tocantins-656', 'São Lucas', 2294, '26/7/2016');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Lui Dourado Alpuim', 'Rua Arlindo Nogueira-598', 'Feitosa', 169, '5/8/2020');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Claúdio Pereira Pedroso', 'Rua da Imprensa-25', 'Tancredo Neves', 2507, '14/7/2016');
-insert into cliente (nome, endereco, bairro ,idCidade, dataLigCadastro) values ('Diogo Abranches Sousa', 'Rua Paracatu-756', 'Park das Águas Bonitas II', 1299, '22/7/2017');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Valter Bessa Negrão', 'Rua Paracatu-753', 'Zabelê', 764, '7/12/2017');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Haniel Brito Reis', 'Rua Carlos Augusto Cornelsen-32', 'Plano Diretor Sul', 829, '14/6/2018');
-insert into cliente (nome, endereco, bairro, idCidade, dataLigCadastro) values ('Rubi Baptista Tuna', 'Avenida Evilásio Oenning-880', 'Alcântara', 2000, '14/06/2015');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Delfim Pimentel Macena', 'Avenida Almirante Maximiano Fonseca-873', 'Novo Buritizal', 328, '5/11/2019');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Emídio Alcântara Aragão', 'Avenida Governador José Malcher-169', 'Cachoeirinha', 1258, '26/3/2019');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Isis Cavaco Castanheda', 'Rua Barão de Vitória-637', 'Nova Baden', 490, '17/5/2017');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Mateus Assunção Leão', 'Avenida Maria Luísa do Val Penteado-452', 'Tabuleta', 1599, '9/12/2019');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Julianna Kruse', 'Rua Tenente-Coronel Cardoso-595', 'Plano Diretor Sul', 1673, '16/3/2019');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Délcio Silvestre Mafra', 'Rua Arlindo Nogueira-56', 'Perová', 646, '9/12/2019');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Zita Barateiro Carromeu', 'Rua Pereira Estéfano-164', 'Farrapos', 723, '17/9/2017');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Adalberto Barrocas Aldeia', 'Avenida Rio Branco-852', 'Pedrinhas', 853, '27/7/2020');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Anabel Pinto Candal', 'Rua da Imprensa-246', 'Boa Vista II', 2418, '22/11/2017');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Lisa Torreiro Serpa', 'Rua Frederico Moura-715', 'Monte Líbano', 1809, '28/1/2020');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Eliza Lourenço Figueiredo', 'Rua Cândido Portinari-134', 'Guará I', 1563, '23/5/2017');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Ester Pinto Morais', 'Avenida Tocantins-533', 'Santa Cecília', 152, '19/2/2019');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Kévim Tabanez Tinoco', 'Rua das Fiandeiras-533', 'Novo Horizonte', 288, '23/1/2019');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro, cancelado) values ('Estevão Vilante Furtado', 'Rua Serra de Bragança-86', 'Jardim dos Monólitos', 2327, '7/2/2019', 'S');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Igor Doutis Prudente', 'Avenida Desembargador Moreira-317', 'Centro', 1282, '25/7/2016');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Xavier Modesto Jorge', 'Avenida Almirante Maximiano Fonseca-409', 'Nova Estação', 2580, '30/7/2019');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Gabriel Vilela Ramos', 'Avenida Esbertalina Barbosa Damiani-465', 'João Eduardo II', 1251, '16/3/2017');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Elena Carmona Moutinho', 'Rodovia Raposo Tavares-899', 'Alto do Garrote', 431, '3/1/2019');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Tomás Barbosa Imperial', 'Rua Domingos Olímpio-695', 'Porto de Antas', 367, '30/5/2018');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Aicha Valério Passarinho', 'Rua Tenente-Coronel Cardoso-598', 'Heliópolis', 1031, '19/12/2018');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Leah Lopes Dias', 'Avenida São João-525', 'Ano Bom', 2599, '8/4/2019');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Valdemar Quental Matias', 'Rua Cristiano Olsen-586', 'Conjunto Ouricurí', 2509, '21/8/2016');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Mark Quintais Azevedo', 'Rua dos Carijós-169', 'Cidade Nova', 1526, '16/12/2017');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Mellisent Semken', 'Avenida Tocantins-656', 'São Lucas', 2294, '26/7/2016');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Lui Dourado Alpuim', 'Rua Arlindo Nogueira-598', 'Feitosa', 169, '5/8/2020');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Claúdio Pereira Pedroso', 'Rua da Imprensa-25', 'Tancredo Neves', 2507, '14/7/2016');
+insert into cliente (nome, endereco, bairro ,idCidade, dataCadastro) values ('Diogo Abranches Sousa', 'Rua Paracatu-756', 'Park das Águas Bonitas II', 1299, '22/7/2017');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Valter Bessa Negrão', 'Rua Paracatu-753', 'Zabelê', 764, '7/12/2017');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Haniel Brito Reis', 'Rua Carlos Augusto Cornelsen-32', 'Plano Diretor Sul', 829, '14/6/2018');
+insert into cliente (nome, endereco, bairro, idCidade, dataCadastro) values ('Rubi Baptista Tuna', 'Avenida Evilásio Oenning-880', 'Alcântara', 2000, '14/06/2015');
 
 --table operadora
 
