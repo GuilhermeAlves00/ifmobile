@@ -22,7 +22,6 @@ CREATE TABLE cobertura
   CONSTRAINT PK_cobertura PRIMARY KEY (idRegiao)
 );
 
-
 CREATE TABLE estado
 (
   uf char(2) NOT NULL,
@@ -34,7 +33,6 @@ CREATE TABLE estado
   CONSTRAINT FK_estado_idregiao FOREIGN KEY (idRegiao) REFERENCES cobertura
 );
 
-
 CREATE TABLE cidade 
 (
   idCidade SERIAL NOT NULL,
@@ -43,7 +41,6 @@ CREATE TABLE cidade
   CONSTRAINT PK_cidade PRIMARY KEY (idCidade),
   CONSTRAINT FK_cidade_estado FOREIGN KEY (uf) REFERENCES estado
 );
-
 
 CREATE TABLE cliente
 (
@@ -66,7 +63,6 @@ CREATE TABLE operadora
   CONSTRAINT PK_operadora PRIMARY KEY (idOperadora)
 );
 
-
 CREATE TABLE plano
 (
   idPlano SERIAL NOT NULL,
@@ -77,7 +73,6 @@ CREATE TABLE plano
   CONSTRAINT PK_plano PRIMARY KEY (idPlano)
 );
 
-
 CREATE TABLE tarifa
 (
   idTarifa SERIAL NOT NULL,
@@ -86,7 +81,6 @@ CREATE TABLE tarifa
   CONSTRAINT PK_tarifa PRIMARY KEY (idTarifa)
 );
 
-
 CREATE TABLE plano_tarifa
 (
   idPlano int NOT NULL,
@@ -94,9 +88,7 @@ CREATE TABLE plano_tarifa
   CONSTRAINT PK_plano_tarifa PRIMARY KEY (idPlano,idTarifa),
   CONSTRAINT FK_plano_tarifa_idPlano FOREIGN KEY (idPlano) REFERENCES plano,
   CONSTRAINT FK_plano_tarifa_idTarifa FOREIGN KEY (idTarifa) REFERENCES tarifa
- 
 );
-
 
 CREATE TABLE chip
 (
@@ -112,7 +104,6 @@ CREATE TABLE chip
   CONSTRAINT CK_chip_disponivel CHECK (disponivel = 'S' or disponivel = 'N')
 );
 
-
 CREATE TABLE cliente_chip
 (
   idNumero char(11)	NOT NULL,
@@ -121,7 +112,6 @@ CREATE TABLE cliente_chip
   CONSTRAINT FK_cliente_chip_idNumero FOREIGN KEY (idNumero) REFERENCES chip,
   CONSTRAINT FK_cliente_chip_cliente FOREIGN KEY (idCliente) REFERENCES cliente
 );
-
 
 CREATE TABLE ligacao
 (
@@ -137,7 +127,6 @@ CREATE TABLE ligacao
   CONSTRAINT FK_ligacao_chip_receptor FOREIGN KEY (chip_receptor) REFERENCES chip,
   CONSTRAINT FK_ligacao_ufDestino FOREIGN KEY (ufDestino) REFERENCES estado
 );
-
 
 CREATE TABLE fatura
 (
