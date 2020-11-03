@@ -121,7 +121,7 @@ CREATE TABLE ligacao
   chip_receptor	char(11) NOT NULL,
   ufDestino char(2)	NOT NULL,
   duracao time NOT NULL,
-  CONSTRAINT PK_ligacao PRIMARY KEY (dataLig),
+  CONSTRAINT PK_ligacao PRIMARY KEY (dataLig, chip_emissor),
   CONSTRAINT FK_ligacao_chip_emissor FOREIGN KEY (chip_emissor) REFERENCES chip,
   CONSTRAINT FK_ligacao_ufOrigem FOREIGN KEY (ufOrigem) REFERENCES estado,
   CONSTRAINT FK_ligacao_chip_receptor FOREIGN KEY (chip_receptor) REFERENCES chip,

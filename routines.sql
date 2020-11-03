@@ -1,4 +1,4 @@
---geração de número telefônico
+--geração de número telefônico - requisito 1
 create or replace function gerarFone(dddOpt char, pref char)
 returns varchar as $$
 declare 
@@ -29,3 +29,40 @@ begin
 	return fone;
 end $$
 language plpgsql;
+
+--associação de chip - requisito 5
+create or replace function verChipCli()
+returns trigger as $$
+declare
+	clienteCan char;
+	chipDisp char;
+begin		
+	select cancelado from cliente where idCliente=new.idCliente into clienteCan;
+	select disponivel from chip where idNumero=new.idNumero into chipDisp;
+	
+    if clienteCan='S' and chipDisp='N' then
+		raise exception 'Cliente e Chip indisponíveis';
+	elsif clienteCan='S' then
+		raise exception 'Cliente com contrato cancelado';
+	elsif chipDisp='N' then
+		raise exception 'Chip indisponível para associação';
+	else 
+        return new;
+	end if;	
+end $$
+language plpgsql;
+
+create trigger chipCliTri before insert on cliente_chip
+for each row execute procedure verChipCli();
+
+--Tornar o chip indisponível quando associado a um cliente - requisito 10
+create or replace function alterChip()
+returns trigger as $$
+begin		
+	update chip set disponivel='N' where idNumero=new.idNumero;
+	return new;
+end $$
+language plpgsql;
+
+create trigger alterChipTri after insert on cliente_chip
+for each row execute procedure alterChip();

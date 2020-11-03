@@ -5398,40 +5398,40 @@ insert into plano_tarifa (idPlano, idTarifa) values (11,12);
 insert into plano_tarifa (idPlano, idTarifa) values (11,13);  
 
 --table chip
+--Prefixos das operadoras
+--Tim: 85(1|2)
+--Oi: 88(3|4)
+--Claro: 91(5|6)
+--Vivo: 95(7|8)
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('83','851'), 1, 1, default, default);
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('83','852'), 1, 1, default, default);
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('85','852'), 1, 2, default, default);
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('85','851'), 1, 3, default, default);
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('61','852'), 1, 3, default, default);
 
-insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('61985264220', 1, 1, 'N');
-insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('61985166894', 1, 1, 'N');
-insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('61985227078', 1, 1, 'N');
-insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('83985133616', 2, 2, 'N');
-insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('83985278243', 2, 2, 'N');
-insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('83985188070', 2, 2, 'N');
-insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('81985132407', 3, 3, 'N');
-insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('81985178495', 3, 3, 'N');
-insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('81985287835', 3, 3, 'N');
-insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('41985166779', 4, 4, 'N');
-insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('41985107774', 4, 4, 'N'); 
-insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('41985945580', 4, 4, 'N');
-insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('51985263032', 5, 5, 'N');
-insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('51985111498', 6, 6, 'N');
-insert into chip (idNumero, idOperadora, idPlano, disponivel) values ('51985174577', 6, 6, 'N');
-        
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('41','883'), 2, 4, default, default);
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('51','884'), 2, 11, default, default);
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('47','883'), 2, 4, default, default);
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('11','884'), 2, 4, default, default);
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('27','883'), 2, 4, default, default);
+
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('68','915'), 3, 5, default, default);
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('96','915'), 3, 5, default, default);
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('92','916'), 3, 9, default, default);
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('91','915'), 3, 5, default, default);
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('69','915'), 3, 9, default, default);
+
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('21','957'), 4, 6, default, default);
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('21','958'), 4, 8, default, default);
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('31','957'), 4, 8, default, default);
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('11','958'), 4, 8, default, default);
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('41','957'), 4, 8, default, default);
+
+
 --table cliente_chip
 
-insert into cliente_chip (idNumero, idCliente) values ('61985264220', 1);
-insert into cliente_chip (idNumero, idCliente) values ('61985166894', 2);
-insert into cliente_chip (idNumero, idCliente) values ('61985227078', 3);
-insert into cliente_chip (idNumero, idCliente) values ('83985133616', 4);
-insert into cliente_chip (idNumero, idCliente) values ('83985278243', 5);
-insert into cliente_chip (idNumero, idCliente) values ('83985188070', 6);
-insert into cliente_chip (idNumero, idCliente) values ('81985132407', 7);
-insert into cliente_chip (idNumero, idCliente) values ('81985178495', 8);
-insert into cliente_chip (idNumero, idCliente) values ('81985287835', 9);
-insert into cliente_chip (idNumero, idCliente) values ('41985166779', 10);
-insert into cliente_chip (idNumero, idCliente) values ('41985107774', 11);
-insert into cliente_chip (idNumero, idCliente) values ('41985945580', 12);
-insert into cliente_chip (idNumero, idCliente) values ('51985263032', 13);
-insert into cliente_chip (idNumero, idCliente) values ('51985111498', 14);
-insert into cliente_chip (idNumero, idCliente) values ('51985174577', 15);
+--Números gerados dinamicamente 
+
 
 --table ligacao
 /*
@@ -5472,6 +5472,7 @@ insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, 
 insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2019-11-21 14:36:52', '41985166779', 'PR', '83985278243', 'PB', '1:52:14');
 insert into ligacao (dataLig, chip_emissor, ufOrigem, chip_receptor, ufDestino, duracao) values ('2019-12-02 12:14:30', '61985166894', 'DF', '83985278243', 'PB', '0:19:51');
 */
+
 --table fatura
 /*
 insert into fatura (referencia, idNumero, valorPlano, totMinIn, totMinOut, txMinExced, txRoaming, total) values ('30/09/2019', '61985264220', 39.99, 21, 20, null, null, null);
