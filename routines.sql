@@ -30,6 +30,7 @@ begin
 end $$
 language plpgsql;
 
+
 --associação de chip - requisito 5
 create or replace function verChipCli()
 returns trigger as $$
@@ -55,6 +56,7 @@ language plpgsql;
 create trigger chipCliTri before insert on cliente_chip
 for each row execute procedure verChipCli();
 
+
 --Tornar o chip indisponível quando associado a um cliente - requisito 10
 create or replace function alterChip()
 returns trigger as $$
@@ -66,3 +68,68 @@ language plpgsql;
 
 create trigger alterChipTri after insert on cliente_chip
 for each row execute procedure alterChip();
+
+
+--Função geradora de ligações
+CREATE OR REPLACE FUNCTION preencher_tbl( mesano date )
+RETURNS void
+LANGUAGE plpgsql
+AS $$
+DECLARE
+	refcursor NO SCROLL CURSOR FOR SELECT idnumero FROM chip;
+	random int;
+	totaldia int;
+	datainsert timestamp;
+	uforg char(2);
+	ufdest char(2);
+	numrecpt char(11);
+	tempo_rand time;
+BEGIN
+	totaldia := DATE_PART('days', DATE_TRUNC('month', mesano)
+			  + '1 MONTH'::INTERVAL 
+			  - '1 DAY'::INTERVAL);
+	datainsert := to_timestamp(
+	date_part('year', mesano)::varchar||'-'||date_part('month', mesano)::varchar||'-'||'1' ,'YYYY-MM-DD'); 
+	FOR j IN 1..totaldia - 1 LOOP  
+		tempo_rand := '00:10:00';
+		FOR chip IN refcursor LOOP
+				random := floor(random() * 10 + 1)::int;
+				FOR i IN 1..random LOOP
+					SELECT uf FROM estado ORDER BY RANDOM() LIMIT 1 INTO uforg;
+					SELECT uf FROM estado ORDER BY RANDOM() LIMIT 1 INTO ufdest;
+					SELECT idnumero FROM chip ORDER BY RANDOM() LIMIT 1 INTO numrecpt;
+					INSERT INTO ligacao(datalig, chip_emissor, uforigem, chip_receptor, ufdestino, duracao)
+					VALUES (datainsert, chip.idnumero, uforg, numrecpt, ufdest, tempo_rand);
+					tempo_rand := interval '2 minutes' + tempo_rand;
+					datainsert := interval '1 minute' + datainsert;
+				END LOOP;
+		END LOOP;
+		datainsert := interval '1 day' + datainsert;
+	END LOOP;
+END $$;
+
+
+--Requisito 4
+CREATE OR REPLACE FUNCTION chck_inativo_lig()
+RETURNS TRIGGER AS $$
+DECLARE
+disp char(1);
+atv char(1);
+BEGIN
+SELECT disponivel FROM chip WHERE NEW.chip_emissor = idnumero INTO disp;
+SELECT ativo FROM chip WHERE NEW.chip_emissor = idnumero INTO atv;
+IF NOT EXISTS (SELECT idnumero FROM chip WHERE idnumero = new.chip_emissor) 
+OR NOT EXISTS (SELECT idnumero FROM chip WHERE idnumero = new.chip_receptor)
+OR (disp = 'N' OR atv = 'N') THEN
+	RAISE NOTICE 'Dado não inserido, verifique se o chip está inativo ou indisponivel';
+	return null;
+ELSE
+	RAISE NOTICE 'Dado inserido na tabela ligação';
+	return new;
+END IF;
+END;
+$$ LANGUAGE PlPgSQL;
+
+CREATE TRIGGER chck_inativo_trg_lig BEFORE INSERT ON LIGACAO
+FOR EACH ROW
+EXECUTE PROCEDURE chck_inativo_lig();
