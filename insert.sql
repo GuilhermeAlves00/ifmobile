@@ -5427,6 +5427,20 @@ insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (ger
 insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('11','958'), 4, 8, default, default);
 insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('41','957'), 4, 8, default, default);
 
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('61','851'), 1, 7, default, default);
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('61','852'), 1, 7, default, default);
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('11','852'), 1, 3, default, default);
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('11','851'), 1, 3, default, default);
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('21','852'), 1, 3, default, default);
+
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('69','883'), 2, 11, default, default);
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('95','884'), 2, 11, default, default);
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('81','883'), 2, 11, default, default);
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('81','884'), 2, 11, default, default);
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('81','883'), 2, 11, default, default);
+
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('71','915'), 3, 5, default, default);
+insert into chip (idNumero, idOperadora, idPlano, ativo, disponivel) values (gerarFone('71','915'), 3, 5, default, default);
 
 --table cliente_chip
 

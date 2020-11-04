@@ -1,4 +1,5 @@
---geração de número telefônico - requisito 1
+--geração de número telefônico / requisito 1
+
 create or replace function gerarFone(dddOpt char, pref char)
 returns varchar as $$
 declare 
@@ -31,7 +32,29 @@ end $$
 language plpgsql;
 
 
---associação de chip - requisito 5
+--garantir chamadas apenas para chips ativos e indisponíveis / requisito 4
+CREATE OR REPLACE FUNCTION chck_inativo_lig()
+RETURNS TRIGGER AS $$
+DECLARE
+disp char(1);
+atv char(1);
+BEGIN
+SELECT disponivel FROM chip WHERE NEW.chip_emissor = idnumero INTO disp;
+SELECT ativo FROM chip WHERE NEW.chip_emissor = idnumero INTO atv;
+IF NOT EXISTS (SELECT idnumero FROM chip WHERE idnumero = new.chip_emissor) 
+OR NOT EXISTS (SELECT idnumero FROM chip WHERE idnumero = new.chip_receptor)
+OR (disp = 'N' OR atv = 'N') THEN
+	RAISE NOTICE 'Dado não inserido, verifique se o chip está inativo ou indisponivel';
+	return null;
+ELSE
+	RAISE NOTICE 'Dado inserido na tabela ligação';
+	return new;
+END IF;
+END;
+$$ LANGUAGE PlPgSQL;
+
+
+--associação de chip apenas a clientes com cadastro ativo / requisito 5
 create or replace function verChipCli()
 returns trigger as $$
 declare
@@ -57,20 +80,28 @@ create trigger chipCliTri before insert on cliente_chip
 for each row execute procedure verChipCli();
 
 
---Tornar o chip indisponível quando associado a um cliente - requisito 10
-create or replace function alterChip()
+
+
+--Liberar os chips ligados a um cliente que teve o cadastro cancelado // Requisito 6
+create or replace function libera_chips()
 returns trigger as $$
-begin		
-	update chip set disponivel='N' where idNumero=new.idNumero;
+declare
+	allChips no scroll cursor 
+	for select * from cliente_chip where idCliente=new.idCliente;
+begin
+	for linha in allChips loop
+		update chip set disponivel='S' where idNumero=linha.idNumero;
+	end loop;
+	delete from cliente_chip where idCliente=new.idCliente;
 	return new;
 end $$
 language plpgsql;
 
-create trigger alterChipTri after insert on cliente_chip
-for each row execute procedure alterChip();
+create trigger resetChipTri after update of cancelado on cliente
+for each row execute procedure libera_chips();
 
 
---Função geradora de ligações
+--Função geradora de ligações / requisito 7
 CREATE OR REPLACE FUNCTION preencher_tbl( mesano date )
 RETURNS void
 LANGUAGE plpgsql
@@ -108,28 +139,19 @@ BEGIN
 	END LOOP;
 END $$;
 
-
---Requisito 4
-CREATE OR REPLACE FUNCTION chck_inativo_lig()
-RETURNS TRIGGER AS $$
-DECLARE
-disp char(1);
-atv char(1);
-BEGIN
-SELECT disponivel FROM chip WHERE NEW.chip_emissor = idnumero INTO disp;
-SELECT ativo FROM chip WHERE NEW.chip_emissor = idnumero INTO atv;
-IF NOT EXISTS (SELECT idnumero FROM chip WHERE idnumero = new.chip_emissor) 
-OR NOT EXISTS (SELECT idnumero FROM chip WHERE idnumero = new.chip_receptor)
-OR (disp = 'N' OR atv = 'N') THEN
-	RAISE NOTICE 'Dado não inserido, verifique se o chip está inativo ou indisponivel';
-	return null;
-ELSE
-	RAISE NOTICE 'Dado inserido na tabela ligação';
-	return new;
-END IF;
-END;
-$$ LANGUAGE PlPgSQL;
-
 CREATE TRIGGER chck_inativo_trg_lig BEFORE INSERT ON LIGACAO
 FOR EACH ROW
 EXECUTE PROCEDURE chck_inativo_lig();
+
+
+--Tornar o chip indisponível quando associado a um cliente / requisito 8
+create or replace function alterChip()
+returns trigger as $$
+begin		
+	update chip set disponivel='N' where idNumero=new.idNumero;
+	return new;
+end $$
+language plpgsql;
+
+create trigger alterChipTri after insert on cliente_chip
+for each row execute procedure alterChip();
