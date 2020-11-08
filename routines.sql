@@ -184,7 +184,12 @@ BEGIN
 	
 		INSERT INTO fatura (referencia, idnumero, valor_plano, tot_min_int, tot_min_ext, tx_min_exced, tx_roaming, total, pago) 
 		VALUES (datainsert, numero1.idnumero, numero1.valorp, min_m_op, min_out_op, val_exced, roaming, valor_total, 'N');
-	
+	    --COMMIT;
+        --BEGIN
+        --EXCEPTION
+        --    WHEN OTHERS THEN
+        --        ROLLBACK;
+        --END;        
 	END LOOP;
 END;
 $$
@@ -203,7 +208,7 @@ SELECT disponivel FROM chip WHERE NEW.chip_emissor = idnumero INTO disp;
 SELECT ativo FROM chip WHERE NEW.chip_emissor = idnumero INTO atv;
 IF NOT EXISTS (SELECT idnumero FROM chip WHERE idnumero = new.chip_emissor) 
 OR NOT EXISTS (SELECT idnumero FROM chip WHERE idnumero = new.chip_receptor)
-OR (disp = 'N' OR atv = 'N') THEN
+OR (disp = 'S' OR atv = 'N') THEN
 	RAISE NOTICE 'Dado não inserido, verifique se o chip está inativo ou indisponivel';
 	return null;
 ELSE
@@ -266,7 +271,7 @@ for each row execute procedure libera_chips();
 
 
 --rotina geradora de ligações / requisito 7
-CREATE OR REPLACE PROCEDURE preencher_tbl( mesano date )
+CREATE OR REPLACE PROCEDURE preencher_lig( mesano date )
 AS $$
 DECLARE
 	refcursor NO SCROLL CURSOR FOR SELECT idnumero FROM chip;
