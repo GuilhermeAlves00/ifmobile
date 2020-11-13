@@ -1,0 +1,32 @@
+{% extends 'ifmobile_pages/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row header" >
+        <h2 style="text-align:center;color:green">AUDITORIA</h2>
+        <table class="myTable table table-striped" >  
+            <thead>  
+            <tr>
+                <th>idNumero</th>
+                <th>idCliente</th>
+                <th>dataInício</th>
+                <th>dataTérmino</th>
+            </tr>
+        </tr>  
+        </thead>  
+        <tbody>  
+            {% for auditoria in lista_auditoria %}
+            <tr>
+                <td>{{ auditoria.idnumero.get_idnumero }}</td>
+                <td>{{ auditoria.idcliente.get_idcliente }}</td>
+                <td>{{ auditoria.datainicio }}</td>
+                <td>{{ auditoria.datatermino }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>  
+    </table>  
+</div>
+
+</div>
+
+{% endblock %}
