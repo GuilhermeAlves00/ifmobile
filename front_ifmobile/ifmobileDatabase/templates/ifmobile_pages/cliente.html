@@ -1,0 +1,37 @@
+{% extends 'ifmobile_pages/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row header" >
+        <h2 style="text-align:center;color:green">CLIENTE</h2>
+            <table class="myTable table table-striped" >  
+                <thead>  
+                <tr>
+                    <th>idCliente</th>
+                    <th>Nome</th>
+                    <th>Endereço</th>
+                    <th>Bairro</th>
+                    <th>idCidade</th>
+                    <th>dataCadastro</th>
+                    <th>Cancelado</th>
+                </tr>
+            </tr>  
+            </thead>  
+            <tbody>  
+                {% for cliente in lista_cliente %}
+                <tr>
+                    <td>{{ cliente.idcliente }}</td>
+                    <td>{{ cliente.nome }}</td>
+                    <td>{{ cliente.endereco }}</td>
+                    <td>{{ cliente.bairro }}</td>
+                    <td>{{ cliente.idcidade.get_idcidade }}</td>
+                    <td>{{ cliente.datacadastro }}</td>
+                    <td>{{ cliente.cancelado }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>  
+        </table>  
+    </div>
+
+</div>
+{% endblock %}

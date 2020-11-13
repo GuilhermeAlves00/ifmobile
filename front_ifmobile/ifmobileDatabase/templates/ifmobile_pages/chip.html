@@ -1,0 +1,34 @@
+{% extends 'ifmobile_pages/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row header" >
+        <h2 style="text-align:center;color:green">CHIP</h2>
+        <table class="myTable table table-striped" >  
+            <thead>  
+            <tr>
+                <th>idNumero</th>
+                <th>idOperadora</th>
+                <th>idPlano</th>
+                <th>Ativo</th>
+                <th>Disponível</th>
+            </tr>
+        </tr>  
+        </thead>  
+        <tbody>  
+            {% for chip in lista_chip %}
+            <tr>
+                <td>{{ chip.idnumero }}</td>
+                <td>{{ chip.idoperadora.get_idoperadora }}</td>
+                <td>{{ chip.idplano.get_idplano }}</td>
+                <td>{{ chip.ativo }}</td>
+                <td>{{ chip.disponivel }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>  
+    </table>  
+</div>
+
+</div>
+
+{% endblock %}
