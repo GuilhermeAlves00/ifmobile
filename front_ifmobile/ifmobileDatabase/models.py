@@ -8,17 +8,6 @@
 from django.db import models
 
 
-class Auditoria(models.Model):
-    idnumero = models.OneToOneField('Chip', models.DO_NOTHING, db_column='idnumero', primary_key=True)
-    idcliente = models.ForeignKey('Cliente', models.DO_NOTHING, db_column='idcliente')
-    datainicio = models.DateField()
-    datatermino = models.DateField()
-
-    class Meta:
-        managed = False
-        db_table = 'auditoria'
-        unique_together = (('idnumero', 'idcliente', 'datainicio'),)
-
 
 class AuthGroup(models.Model):
     name = models.CharField(unique=True, max_length=150)
@@ -113,8 +102,8 @@ class Operadora(models.Model):
 
 class Chip(models.Model):
     idnumero = models.CharField(primary_key=True, max_length=11)
-    idoperadora = models.ForeignKey(Operadora, on_delete=models.CASCADE, db_column='idoperadora')
-    idplano = models.ForeignKey(Plano, on_delete=models.CASCADE, db_column='idplano')
+    idoperadora = models.ForeignKey(Operadora, models.DO_NOTHING, db_column='idoperadora')
+    idplano = models.ForeignKey(Plano, models.DO_NOTHING, db_column='idplano')
     ativo = models.CharField(max_length=1)
     disponivel = models.CharField(max_length=1)
 
@@ -136,11 +125,12 @@ class Cobertura(models.Model):
         managed = False
         db_table = 'cobertura'
 
+
 class Estado(models.Model):
     uf = models.CharField(primary_key=True, max_length=2)
     nome = models.CharField(max_length=40)
     ddd = models.IntegerField(unique=True)
-    idregiao = models.ForeignKey(Cobertura, on_delete=models.CASCADE, db_column='idregiao')
+    idregiao = models.ForeignKey(Cobertura, models.DO_NOTHING, db_column='idregiao')
 
     def get_uf(self):
         return self.uf
@@ -152,7 +142,7 @@ class Estado(models.Model):
 class Cidade(models.Model):
     idcidade = models.AutoField(primary_key=True)
     nome = models.CharField(max_length=50)
-    uf = models.ForeignKey('Estado', on_delete=models.CASCADE, db_column='uf')
+    uf = models.ForeignKey('Estado', models.DO_NOTHING, db_column='uf')
     
     def get_idcidade(self):
         return self.idcidade
@@ -167,7 +157,7 @@ class Cliente(models.Model):
     nome = models.CharField(max_length=50)
     endereco = models.CharField(max_length=60, blank=True, null=True)
     bairro = models.CharField(max_length=30, blank=True, null=True)
-    idcidade = models.ForeignKey('Cidade', on_delete=models.CASCADE, db_column='idcidade')
+    idcidade = models.ForeignKey('Cidade', models.DO_NOTHING, db_column='idcidade')
     datacadastro = models.DateField(blank=True, null=True)
     cancelado = models.CharField(max_length=1)
 
@@ -178,16 +168,26 @@ class Cliente(models.Model):
         managed = False
         db_table = 'cliente'
 
-
 class ClienteChip(models.Model):
-    idnumero = models.OneToOneField(Chip, on_delete=models.CASCADE, db_column='idnumero', primary_key=True)
-    idcliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, db_column='idcliente')
+    idnumero = models.OneToOneField(Chip, models.DO_NOTHING, db_column='idnumero', primary_key=True)
+    idcliente = models.ForeignKey(Cliente, models.DO_NOTHING, db_column='idcliente')
 
     class Meta:
         managed = False
         db_table = 'cliente_chip'
         unique_together = (('idnumero', 'idcliente'),)
 
+
+class Auditoria(models.Model):
+    idnumero = models.OneToOneField('Chip', models.DO_NOTHING, db_column='idnumero', primary_key=True)
+    idcliente = models.ForeignKey('Cliente', models.DO_NOTHING, db_column='idcliente')
+    datainicio = models.DateField()
+    datatermino = models.DateField()
+
+    class Meta:
+        managed = False
+        db_table = 'auditoria'
+        unique_together = (('idnumero', 'idcliente', 'datainicio'),)
 
 
 
@@ -235,8 +235,6 @@ class DjangoSession(models.Model):
         db_table = 'django_session'
 
 
-
-
 class Fatura(models.Model):
     referencia = models.DateField(primary_key=True)
     idnumero = models.ForeignKey(Chip, models.DO_NOTHING, db_column='idnumero')
@@ -254,18 +252,19 @@ class Fatura(models.Model):
         unique_together = (('referencia', 'idnumero'),)
 
 
-#class Ligacao(models.Model):
-    #datalig = models.DateTimeField(primary_key=True)
-    #chip_emissor = models.ForeignKey(Chip, models.DO_NOTHING, db_column='chip_emissor')
-    #uforigem = models.ForeignKey(Estado, models.DO_NOTHING, db_column='uforigem')
-    #chip_receptor = models.ForeignKey(Chip, models.DO_NOTHING, db_column='chip_receptor')
-    #ufdestino = models.ForeignKey(Estado, models.DO_NOTHING, db_column='ufdestino')
-    #duracao = models.TimeField()
+class Ligacao(models.Model):
+    datalig = models.DateTimeField(primary_key=True)
+    chip_emissor = models.ForeignKey(Chip, models.DO_NOTHING, db_column='chip_emissor', related_name='%(class)s_chip_emissor')
+    uforigem = models.ForeignKey(Estado, models.DO_NOTHING, db_column='uforigem', related_name='%(class)s_uf_origem')
+    chip_receptor = models.ForeignKey(Chip, models.DO_NOTHING, db_column='chip_receptor')
+    ufdestino = models.ForeignKey(Estado, models.DO_NOTHING, db_column='ufdestino')
+    duracao = models.DurationField()
 
-    #class Meta:
-    #    managed = False
-    #    db_table = 'ligacao'
-    #    unique_together = (('datalig', 'chip_emissor'),)
+    class Meta:
+        managed = False
+        db_table = 'ligacao'
+        unique_together = (('datalig', 'chip_emissor'),)
+
 
 class Tarifa(models.Model):
     idtarifa = models.AutoField(primary_key=True)
@@ -281,8 +280,8 @@ class Tarifa(models.Model):
 
 
 class PlanoTarifa(models.Model):
-    idplano = models.OneToOneField(Plano, on_delete=models.CASCADE, db_column='idplano', primary_key=True)
-    idtarifa = models.ForeignKey('Tarifa', on_delete=models.CASCADE, db_column='idtarifa')
+    idplano = models.OneToOneField(Plano, models.DO_NOTHING, db_column='idplano', primary_key=True)
+    idtarifa = models.ForeignKey('Tarifa', models.DO_NOTHING, db_column='idtarifa')
 
     class Meta:
         managed = False

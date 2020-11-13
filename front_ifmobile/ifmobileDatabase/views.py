@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from .models import *
 
-def menu(request):
-    return render(request, 'ifmobile_pages/menu.html')
+def main(request):
+    return render(request, 'ifmobile_pages/base.html')
 
 def exibir_coberturas(request):
     context = {'lista_cobertura': Cobertura.objects.all()}
@@ -40,3 +40,18 @@ def exibir_plano_tarifa(request):
     context = {'lista_plano_tarifa': PlanoTarifa.objects.all()}
     return render(request, 'ifmobile_pages/plano_tarifa.html', context)        
 
+def exibir_auditorias(request):
+    context = {'lista_auditoria': Auditoria.objects.all()}
+    return render(request, 'ifmobile_pages/auditoria.html', context)        
+
+def exibir_tarifas(request):
+    context = {'lista_tarifa': Tarifa.objects.all()}
+    return render(request, 'ifmobile_pages/tarifa.html', context)        
+
+def exibir_ligacoes(request):
+    context = {'lista_ligacao': Ligacao.objects.all()}
+    return render(request, 'ifmobile_pages/ligacao.html', context)        
+
+def exibir_faturas(request):
+    context = {'lista_fatura': Fatura.objects.all()}
+    return render(request, 'ifmobile_pages/fatura.html', context)        
