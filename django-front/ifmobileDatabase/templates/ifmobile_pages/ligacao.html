@@ -1,0 +1,36 @@
+{% extends 'ifmobile_pages/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row header" >
+        <h2 style="text-align:center;color:green">LIGACAO</h2>
+        <table class="myTable table table-striped" >  
+            <thead>  
+            <tr>
+                <th>dataLig</th>
+                <th>chipEmissor</th>
+                <th>ufOrigem</th>
+                <th>chipReceptor</th>
+                <th>ufDestino</th>
+                <th>Duracão</th>
+            </tr>
+        </tr>  
+        </thead>  
+        <tbody>  
+            {% for obj in query %}
+            <tr>
+                <td>{{ obj.0 }}</td>
+                <td>{{ obj.1 }}</td>
+                <td>{{ obj.2 }}</td>
+                <td>{{ obj.3 }}</td>
+                <td>{{ obj.4 }}</td>
+                <td>{{ obj.5 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>  
+    </table>  
+</div>
+
+</div>
+
+{% endblock %}

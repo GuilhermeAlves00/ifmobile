@@ -1,0 +1,26 @@
+{% extends 'ifmobile_pages/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row header" >
+        <h2 style="text-align:center;color:green">COBERTURA</h2>
+        <table class="myTable table table-striped" >  
+            <thead>  
+            <tr>
+                <th>idRegião</th>
+                <th>Descrição</th>
+            </tr>
+        </tr>  
+        </thead>  
+        <tbody>  
+            {% for cobertura in lista_cobertura %}
+            <tr>
+                <td>{{ cobertura.idregiao }}</td>
+                <td>{{ cobertura.descricao }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>  
+    </table>  
+</div>
+</div>
+{% endblock %}

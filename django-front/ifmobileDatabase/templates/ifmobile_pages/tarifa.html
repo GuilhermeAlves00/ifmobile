@@ -1,0 +1,30 @@
+{% extends 'ifmobile_pages/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row header" >
+        <h2 style="text-align:center;color:green">TARIFA</h2>
+        <table class="myTable table table-striped" >  
+            <thead>  
+            <tr>
+                <th>idTarifa</th>
+                <th>Descrição</th>
+                <th>Valor</th>
+            </tr>
+        </tr>  
+        </thead>  
+        <tbody>  
+            {% for tarifa in lista_tarifa %}
+            <tr>
+                <td>{{ tarifa.idtarifa }}</td>
+                <td>{{ tarifa.descricao }}</td>
+                <td>{{ tarifa.valor }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>  
+    </table>  
+</div>
+
+</div>
+
+{% endblock %}
